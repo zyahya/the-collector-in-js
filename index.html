@@ -1,143 +1,181 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
-        
-        
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>The Collector In JavaScript</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/fontawesome.min.css" rel="stylesheet">
-        <link href="css/brands.min.css" rel="stylesheet">
-        <link href="css/solid.min.css" rel="stylesheet">
-        <link href="css/v4-font-face.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
-        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
-        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
-
-    <body class="homepage">
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href=".">The Collector In JavaScript</a>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-
-                    <ul class="nav navbar-nav ms-md-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>The Collector In JavaScript</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
-        <ul class="nav flex-column">
+      <script>
+        // Current page data
+        var mkdocs_page_name = "The Collector In JavaScript";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> The Collector In JavaScript
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">The Collector In JavaScript</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-does-this-book-cover">What Does This Book Cover?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#global-objects">Global Objects</a>
+    </li>
         </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Global Objects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Array/">Array</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/String/">String</a>
+                  </li>
+              </ul>
+      </div>
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    </nav>
 
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">The Collector In JavaScript</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">The Collector In JavaScript</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="the-collector-in-javascript">The Collector In JavaScript</h1>
+<h2 id="introduction">Introduction</h2>
+<p>JavaScript is a vast and dynamic language, filled with both essential and less frequently used features. While official documentation provides a comprehensive guide, it can sometimes be overwhelming—especially when you're searching for specific, practical knowledge. This book is not meant to replace the original references but rather to serve as a streamlined companion, offering a more structured and accessible approach.</p>
+<p>In this book, I’ve focused on three key principles:</p>
+<ol>
+<li>
+<p><strong>Refining the Essentials</strong> – JavaScript contains a wide range of features, but as a developer, you only use a subset of them in most cases. This book distills the language down to its most valuable and frequently used components, helping you focus on what truly matters.</p>
+</li>
+<li>
+<p><strong>Organized Categorization</strong> – After selecting the most important aspects of JavaScript, I’ve grouped them into structured lists and sections based on their functionality. This makes it easier to navigate and quickly find what you need, much like the organization found in the String Object section.</p>
+</li>
+<li>
+<p><strong>Concise and to the Point</strong> – Unlike traditional references that provide exhaustive details, this book follows a minimalist approach. Each topic is presented in a compact format that delivers exactly what you need, without unnecessary complexity. For example, functions in this book are explained in three simple sections: <strong>Definition</strong> – What the function does, including its purpose and the type of value it returns. <strong>Practical Example</strong> – A straightforward code snippet demonstrating its usage. <strong>Parameters Breakdown</strong> – A clear explanation of the inputs the function accepts.</p>
+</li>
+</ol>
+<p>To ensure accuracy and reliability, this book is based on well-established resources, primarily the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a>. MDN serves as one of the most trusted references for JavaScript, and I have used it extensively as a foundation for gathering and refining the information presented here. However, rather than simply replicating its content, this book reorganizes and simplifies key concepts to make them more accessible and easier to grasp.</p>
+<p>By following this approach, this book ensures that you get the right information, in the right way, at the right time. Whether you're a beginner looking for clarity or an experienced developer seeking a quick reference, this book is designed to make your JavaScript journey smoother and more efficient.</p>
+<p>Let's dive in!</p>
+<h2 id="what-does-this-book-cover">What Does This Book Cover?</h2>
+<h3 id="global-objects">Global Objects</h3>
+<p>In JavaScript, built-in objects, also known as global objects, are predefined objects that are available for use throughout your code without the need for explicit declarations. These objects provide essential functionalities and utilities, such as working with numbers, strings, arrays, dates, and more. Some well-known global objects include <code>Object</code>, <code>Array</code>, <code>Function</code>, <code>Math</code>, <code>Date</code>, and <code>JSON</code>, among others. These objects are part of the global execution context, meaning they can be accessed directly in any part of your code, making them a foundational aspect of JavaScript programming. Understanding how to work with these built-in objects is key to writing efficient and effective JavaScript code.</p>
+<p>There are several built-in objects, and their usage can vary depending on the context. These objects cover a wide range of functionality in JavaScript and are central to working with both data and code execution.</p>
+<ul>
+<li><a href="./Global_Objects/Object.md">Object</a></li>
+<li><a href="Global_Objects/Array/">Array</a></li>
+<li><a href="./Global_Objects/Function.md">Function</a></li>
+<li><a href="Global_Objects/String/">String</a></li>
+<li><a href="./Global_Objects/Number.md">Number</a></li>
+<li><a href="./Global_Objects/Boolean.md">Boolean</a></li>
+<li><a href="./Global_Objects/Math.md">Math</a></li>
+<li><a href="./Global_Objects/Date.md">Date</a></li>
+<li><a href="./Global_Objects/RegExp.md">RegExp</a></li>
+<li><a href="./Global_Objects/Error.md">Error</a></li>
+<li><a href="./Global_Objects/Promise.md">Promise</a></li>
+<li><a href="./Global_Objects/Set.md">Set</a></li>
+<li><a href="./Global_Objects/Map.md">Map</a></li>
+<li><a href="./Global_Objects/WeakSet.md">WeakSet</a></li>
+<li><a href="./Global_Objects/WeakMap.md">WeakMap</a></li>
+<li><a href="./Global_Objects/JSON.md">JSON</a></li>
+<li><a href="./Global_Objects/Symbol.md">Symbol</a></li>
+<li><a href="./Global_Objects/Iterator.md">Iterator</a></li>
+<li><a href="./Global_Objects/Intl.md">Intl</a></li>
+<li><a href="./Global_Objects/Console.md">Console</a></li>
+</ul>
+<hr />
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/zyahya/the-collector-in-js">The Collector In JavaScript</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/zyahya">Ziad Yahya</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+              
             </div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script>
-            var base_url = ".",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="Global_Objects/Array/" class="btn btn-neutral float-right" title="Array">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="Global_Objects/Array/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
 
-    </body>
+</body>
 </html>
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-01-31 17:57:15.236473+00:00
+Build Date UTC : 2025-01-31 18:52:46.089350+00:00
 -->

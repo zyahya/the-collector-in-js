@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>String - The Collector In JavaScript</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "String";
+        var mkdocs_page_input_path = "Global_Objects/String.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> The Collector In JavaScript
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">The Collector In JavaScript</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Global Objects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Array/">Array</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">String</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#static-methods">Static Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#stringrawtemplatestring">String.raw(templateString)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stringfromcharcodenumn">String.fromCharCode(...numN)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stringfromcodepointargs">String.fromCodePoint(args)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instance-methods">Instance Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#character-access-and-manipulation">Character Access and Manipulation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#atindex">at(index)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#charatindex">charAt(index)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#charcodeatindex">charCodeAt(index)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#codepointatindex">codePointAt(index)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#searching-and-matching">Searching and Matching</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#startswithsearchstring-endposition">startsWith(searchString, endPosition)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#endswithsearchstring-endposition">endsWith(searchString, endPosition)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#includessearchstring-position">includes(searchString, position)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#searchregexp">search(regexp)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#indexofsearchstring-position">indexOf(searchString, position)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lastindexofsearchstring-position">lastIndexOf(searchString, position)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#matchregexp">match(regexp)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#matchallregexp">matchAll(regexp)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#extraction-and-splitting">Extraction and Splitting</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sliceindexstart-indexend">slice(indexStart, indexEnd)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#substringindexstart-indexend">substring(indexStart, indexEnd)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#splitseparator-limit">split(separator, limit)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#case-conversion">Case Conversion</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tolowercase">toLowerCase()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#touppercase">toUpperCase()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tolocaleuppercaselocales">toLocaleUpperCase(locales)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tolocalelowercaselocales">toLocaleLowerCase(locales)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#padding">Padding</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#padstarttargetlength-padstring">padStart(targetLength, padString)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#padendtargetlength-padstring">padEnd(targetLength, padString)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#replacement">Replacement</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#replaceregex-replacement">replace(regex, replacement)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#replaceallregex-replacement">replaceAll(regex, replacement)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#concatenation">Concatenation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#concatstrn">concat(strN)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#whitespace-handling">Whitespace Handling</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trim">trim()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trimstart">trimStart()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trimend">trimEnd()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repetition-and-normalization">Repetition and Normalization</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#repeatcount">repeat(count)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iswellformed">isWellFormed()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#towellformed">toWellFormed()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#normalizeform">normalize(form)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#string-conversion-and-representation">String Conversion and Representation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#valueof">valueOf()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tostring">toString()</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instance-properties">Instance Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#length">length</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">The Collector In JavaScript</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Global Objects</li>
+      <li class="breadcrumb-item active">String</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="string">String</h1>
+<p>The <code>String</code> object in JavaScript represents a sequence of characters. It provides a variety of methods and properties for manipulating and inspecting strings.</p>
+<h2 id="static-methods">Static Methods</h2>
+<h3 id="stringrawtemplatestring"><code>String.raw(templateString)</code></h3>
+<p>Returns a raw string from a template literal, escaping any special characters (like backslashes) in the template literal as-is.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = String.raw`C:\Path\to\net.conf`;
+
+console.log(str); // &quot;C:\Path\to\net.conf&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>templateString</code>: A template literal passed to the method, typically containing escape sequences like <code>\t</code> or <code>\n</code>.</li>
+</ul>
+<hr />
+<h3 id="stringfromcharcodenumn"><code>String.fromCharCode(...numN)</code></h3>
+<p>Returns a string created from one or more Unicode values, where each number represents a UTF-16 code unit.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(String.fromCharCode(65, 66, 67)); // &quot;ABC&quot;
+console.log(String.fromCharCode(128512)); // &quot;😀&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>numN</code>: One or more numbers representing UTF-16 code units.</li>
+</ul>
+<hr />
+<h3 id="stringfromcodepointargs"><code>String.fromCodePoint(args)</code></h3>
+<p>Returns a string created from one or more Unicode code points. This method supports characters outside the Basic Multilingual Plane (BMP), which may require surrogate pairs.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(String.fromCodePoint(65, 66, 67)); // &quot;ABC&quot;
+console.log(String.fromCodePoint(128512)); // &quot;😀&quot;
+console.log(String.fromCodePoint(0x1f600)); // &quot;😀&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>args</code>: One or more Unicode code points, which can be outside the BMP.</li>
+</ul>
+<hr />
+<h2 id="instance-methods">Instance Methods</h2>
+<h3 id="character-access-and-manipulation">Character Access and Manipulation</h3>
+<p>These methods allow you to access specific characters or code points and manipulate characters.</p>
+<h4 id="atindex"><code>at(index)</code></h4>
+<p>Returns the character at a given index, allowing negative indices for counting from the end.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;hello&quot;;
+
+console.log(str.at(1)); // &quot;e&quot;
+console.log(str.at(-1)); // &quot;o&quot;
+console.log(str.at(10)); // undefined
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>index</code>: The position of the character to return, can be negative.</li>
+</ul>
+<hr />
+<h4 id="charatindex"><code>charAt(index)</code></h4>
+<p>Returns the character at a specified index. Unlike <code>at()</code>, it does not support negative indices.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;hello&quot;;
+
+console.log(str.charAt(1)); // &quot;e&quot;
+console.log(str.charAt(10)); // &quot;&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>index</code> (Optional): The position of the character to return. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h4 id="charcodeatindex"><code>charCodeAt(index)</code></h4>
+<p>Returns the UTF-16 code unit of the character at a given index.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;ABC&quot;;
+
+console.log(str.charCodeAt(0)); // 65
+console.log(str.charCodeAt(1)); // 66
+console.log(str.charCodeAt(10)); // NaN
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>index</code> (Optional): The position of the character to retrieve its code. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h4 id="codepointatindex"><code>codePointAt(index)</code></h4>
+<p>Returns the Unicode code point of the character at a given index, supporting surrogate pairs.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;𝒜BC&quot;;
+
+console.log(str.codePointAt(0)); // 119964 (𝒜)
+console.log(str.codePointAt(1)); // 66 (B)
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>index</code> (Optional): The position of the character to retrieve its code point. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h3 id="searching-and-matching">Searching and Matching</h3>
+<p>Methods for checking if a string contains certain substrings or matches patterns.</p>
+<h4 id="startswithsearchstring-endposition"><code>startsWith(searchString, endPosition)</code></h4>
+<p>Checks if a string starts with a given substring. Returns <code>true</code> if it does, otherwise returns <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello, world!&quot;;
+
+console.log(str.startsWith(&quot;Hello&quot;)); // true
+console.log(str.startsWith(&quot;world&quot;)); // false
+console.log(str.startsWith(&quot;Hello&quot;, 1)); // false
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>searchString</code>: The substring to check for at the start of the string. (Required)</li>
+<li><code>endPosition</code> (Optional): The position in the string where the search should stop. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h4 id="endswithsearchstring-endposition"><code>endsWith(searchString, endPosition)</code></h4>
+<p>Checks if a string ends with a given substring. Returns <code>true</code> if it does, otherwise returns <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello, world!&quot;;
+
+console.log(str.endsWith(&quot;world!&quot;)); // true
+console.log(str.endsWith(&quot;Hello&quot;)); // false
+console.log(str.endsWith(&quot;world&quot;, 12)); // true
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>searchString</code>: The substring to check for at the end of the string.</li>
+<li><code>endPosition</code> (Optional): The length of the string to consider. Defaults to the full length of the string.</li>
+</ul>
+<hr />
+<h4 id="includessearchstring-position"><code>includes(searchString, position)</code></h4>
+<p>Checks if a string contains a given substring. Returns <code>true</code> if it does, otherwise returns <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello, world!&quot;;
+
+console.log(str.includes(&quot;world&quot;)); // true
+console.log(str.includes(&quot;Hello&quot;, 1)); // false
+console.log(str.includes(&quot;o&quot;, 5)); // true
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>searchString</code>: The substring to search for. (Required)</li>
+<li><code>position</code> (Optional): The index to start searching from. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h4 id="searchregexp"><code>search(regexp)</code></h4>
+<p>Finds the first match of a regular expression in the string and returns the index of the match, or <code>-1</code> if no match is found.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;some string&quot;;
+
+console.log(str.search(/str/)); // 5
+console.log(str.search(&quot;ring&quot;)); // 7
+console.log(str.search(&quot;wiki&quot;)); // -1
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>regexp</code>: The pattern to search for, either as a string or a regular expression.</li>
+</ul>
+<hr />
+<h4 id="indexofsearchstring-position"><code>indexOf(searchString, position)</code></h4>
+<p>Returns the index of the first occurrence of a substring, or <code>-1</code> if not found.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;hello world&quot;;
+
+console.log(str.indexOf(&quot;o&quot;)); // 4
+console.log(str.indexOf(&quot;world&quot;)); // 6
+console.log(str.indexOf(&quot;o&quot;, 5)); // 7
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>searchString</code>: The substring to search for.</li>
+<li><code>position</code> (Optional): The index to start searching from. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h4 id="lastindexofsearchstring-position"><code>lastIndexOf(searchString, position)</code></h4>
+<p>Returns the index of the last occurrence of a substring, or <code>-1</code> if not found.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;hello world&quot;;
+
+console.log(str.lastIndexOf(&quot;o&quot;)); // 7
+console.log(str.lastIndexOf(&quot;world&quot;)); // 6
+console.log(str.lastIndexOf(&quot;o&quot;, 6)); // 4
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>searchString</code>: The substring to search for.</li>
+<li><code>position</code> (Optional): The index to start searching backward from. Defaults to the string's full length.</li>
+</ul>
+<hr />
+<h4 id="matchregexp"><code>match(regexp)</code></h4>
+<p>Finds matches for a regular expression and returns an array of matches or <code>null</code> if none are found.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello 123, hello 456&quot;;
+
+console.log(str.match(/\d+/g)); // [&quot;123&quot;, &quot;456&quot;]
+console.log(str.match(/hello/i)); // [&quot;Hello&quot;, index: 0, ...]
+console.log(str.match(/xyz/)); // null
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>regexp</code>: A regular expression to match against the string.</li>
+</ul>
+<hr />
+<h4 id="matchallregexp"><code>matchAll(regexp)</code></h4>
+<p>Returns an iterator for all matches of a regular expression in a string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello 123, hello 456&quot;;
+let matches = str.matchAll(/\d+/g);
+
+console.log([...matches]); // [[&quot;123&quot;], [&quot;456&quot;]]
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>regexp</code>: A global regular expression (<code>/g</code> flag is required).</li>
+</ul>
+<hr />
+<h3 id="extraction-and-splitting">Extraction and Splitting</h3>
+<p>Methods for extracting or splitting parts of the string.</p>
+<h4 id="sliceindexstart-indexend"><code>slice(indexStart, indexEnd)</code></h4>
+<p>Extracts a section of a string and returns a new string without modifying the original.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello, world!&quot;;
+
+console.log(str.slice(7)); // &quot;world!&quot;
+console.log(str.slice(0, 5)); // &quot;Hello&quot;
+console.log(str.slice(-6)); // &quot;world!&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>indexStart</code>: The start index of the extraction.</li>
+<li><code>indexEnd</code> (Optional): The index before which to stop extraction. Defaults to the end of the string.</li>
+</ul>
+<hr />
+<h4 id="substringindexstart-indexend"><code>substring(indexStart, indexEnd)</code></h4>
+<p>Extracts a portion of a string and returns it as a new string, swapping indices if <code>indexStart</code> is greater than <code>indexEnd</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello, world!&quot;;
+
+console.log(str.substring(7)); // &quot;world!&quot;
+console.log(str.substring(0, 5)); // &quot;Hello&quot;
+console.log(str.substring(5, 0)); // &quot;Hello&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>indexStart</code>: The start index of the extraction.</li>
+<li><code>indexEnd</code> (Optional): The index before which to stop extraction. Defaults to the end of the string.</li>
+</ul>
+<hr />
+<h4 id="splitseparator-limit"><code>split(separator, limit)</code></h4>
+<p>Splits a string into an array of substrings based on a given separator.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;apple,banana,cherry&quot;;
+
+console.log(str.split(&quot;,&quot;)); // [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+console.log(str.split(&quot;,&quot;, 2)); // [&quot;apple&quot;, &quot;banana&quot;]
+console.log(str.split(&quot;&quot;)); // [&quot;a&quot;, &quot;p&quot;, &quot;p&quot;, &quot;l&quot;, &quot;e&quot;, &quot;,&quot;, &quot;b&quot;, &quot;a&quot;, &quot;n&quot;, &quot;a&quot;, &quot;n&quot;, &quot;a&quot;, &quot;,&quot;, &quot;c&quot;, &quot;h&quot;, &quot;e&quot;, &quot;r&quot;, &quot;r&quot;, &quot;y&quot;]
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>separator</code>: A string or regular expression used to split the string.</li>
+<li><code>limit</code> (Optional): The maximum number of splits to include in the array.</li>
+</ul>
+<hr />
+<h3 id="case-conversion">Case Conversion</h3>
+<p>Methods for converting string characters to different cases or locale-specific variations.</p>
+<h4 id="tolowercase"><code>toLowerCase()</code></h4>
+<p>Converts all characters in a string to lowercase and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello World&quot;;
+
+console.log(str.toLowerCase()); // &quot;hello world&quot;
+</code></pre>
+<hr />
+<h4 id="touppercase"><code>toUpperCase()</code></h4>
+<p>Converts all characters in a string to uppercase and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello World&quot;;
+
+console.log(str.toUpperCase()); // &quot;HELLO WORLD&quot;
+</code></pre>
+<hr />
+<h4 id="tolocaleuppercaselocales"><code>toLocaleUpperCase(locales)</code></h4>
+<p>Converts the string to uppercase using locale-specific rules and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;i&quot;;
+
+console.log(str.toLocaleUpperCase(&quot;tr&quot;)); // &quot;İ&quot;
+console.log(str.toLocaleUpperCase(&quot;en&quot;)); // &quot;I&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>locales</code> (Optional): A string or array of locale identifiers affecting case conversion. Defaults to the environment’s locale.</li>
+</ul>
+<hr />
+<h4 id="tolocalelowercaselocales"><code>toLocaleLowerCase(locales)</code></h4>
+<p>Converts the string to lowercase using locale-specific rules and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;İ&quot;;
+
+console.log(str.toLocaleLowerCase(&quot;tr&quot;)); // &quot;i&quot;
+console.log(str.toLocaleLowerCase(&quot;en&quot;)); // &quot;i&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>locales</code> (Optional): A string or array of locale identifiers affecting case conversion. Defaults to the environment’s locale.</li>
+</ul>
+<hr />
+<h3 id="padding">Padding</h3>
+<p>Methods for padding strings to a certain length by adding characters.</p>
+<h4 id="padstarttargetlength-padstring"><code>padStart(targetLength, padString)</code></h4>
+<p>Pads the current string with another string (or spaces by default) at the beginning until it reaches the specified length.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;42&quot;;
+
+console.log(str.padStart(5, &quot;0&quot;)); // &quot;00042&quot;
+console.log(str.padStart(5)); // &quot;   42&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>targetLength</code>: The length of the resulting string after padding.</li>
+<li><code>padString</code> (Optional): The string used for padding. Defaults to a space.</li>
+</ul>
+<hr />
+<h4 id="padendtargetlength-padstring"><code>padEnd(targetLength, padString)</code></h4>
+<p>Pads the current string with another string (or spaces by default) at the end until it reaches the specified length.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;42&quot;;
+
+console.log(str.padEnd(5, &quot;0&quot;)); // &quot;42000&quot;
+console.log(str.padEnd(5)); // &quot;42   &quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>targetLength</code>: The length of the resulting string after padding.</li>
+<li><code>padString</code> (Optional): The string used for padding. Defaults to a space.</li>
+</ul>
+<hr />
+<h3 id="replacement">Replacement</h3>
+<h4 id="replaceregex-replacement"><code>replace(regex, replacement)</code></h4>
+<p>Replaces the first match of a given substring or regular expression with a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;hello world&quot;;
+
+console.log(str.replace(&quot;world&quot;, &quot;there&quot;)); // &quot;hello there&quot;
+console.log(str.replace(/o/, &quot;O&quot;)); // &quot;hellO world&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>regex</code>: A string or regular expression to be replaced.</li>
+<li><code>replacement</code>: The new string to replace the match with.</li>
+</ul>
+<hr />
+<h4 id="replaceallregex-replacement"><code>replaceAll(regex, replacement)</code></h4>
+<p>Replaces all occurrences of a given substring or regular expression with a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;hello world, world!&quot;;
+
+console.log(str.replaceAll(&quot;world&quot;, &quot;there&quot;)); // &quot;hello there, there!&quot;
+console.log(str.replaceAll(/o/g, &quot;O&quot;)); // &quot;hellO wOrld, wOrld!&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>regex</code>: A string or regular expression to be replaced.</li>
+<li><code>replacement</code>: The new string to replace the matches with.</li>
+</ul>
+<hr />
+<h3 id="concatenation">Concatenation</h3>
+<h4 id="concatstrn"><code>concat(strN)</code></h4>
+<p>Concatenates one or more strings and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello&quot;;
+
+console.log(str.concat(&quot; &quot;, &quot;World&quot;, &quot;!&quot;)); // &quot;Hello World!&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>strN</code>: One or more strings to concatenate.</li>
+</ul>
+<hr />
+<h3 id="whitespace-handling">Whitespace Handling</h3>
+<p>These methods focus on trimming and adjusting the spaces around or inside the string.</p>
+<h4 id="trim"><code>trim()</code></h4>
+<p>Removes whitespace from both ends of a string and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;  hello  &quot;;
+
+console.log(str.trim()); // &quot;hello&quot;
+</code></pre>
+<hr />
+<h4 id="trimstart"><code>trimStart()</code></h4>
+<p>Removes whitespace from the beginning of a string and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;  hello  &quot;;
+
+console.log(str.trimStart()); // &quot;hello  &quot;
+</code></pre>
+<p>An alternative to <code>trimStart()</code> do the same behavior is <code>trimLeft()</code>.</p>
+<hr />
+<h4 id="trimend"><code>trimEnd()</code></h4>
+<p>Removes whitespace from the end of a string and returns a new string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;  hello  &quot;;
+
+console.log(str.trimEnd()); // &quot;  hello&quot;
+</code></pre>
+<p>An alternative to <code>trimEnd()</code> do the same behavior is <code>trimRight()</code>.</p>
+<hr />
+<h3 id="repetition-and-normalization">Repetition and Normalization</h3>
+<p>Methods related to repeating strings or ensuring proper encoding.</p>
+<h4 id="repeatcount"><code>repeat(count)</code></h4>
+<p>Returns a new string containing the original string repeated <code>count</code> times.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;ha&quot;;
+
+console.log(str.repeat(3)); // &quot;hahaha&quot;
+console.log(str.repeat(0)); // &quot;&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>count</code>: The number of times to repeat the string. Must be a non-negative integer.</li>
+</ul>
+<hr />
+<h4 id="iswellformed"><code>isWellFormed()</code></h4>
+<p>Checks if the string is well-formed, meaning it doesn’t contain lone surrogate code units. Returns <code>true</code> if well-formed, otherwise <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str1 = &quot;hello&quot;;
+let str2 = &quot;ab\uD800&quot;; // Lone surrogate
+
+console.log(str1.isWellFormed()); // true
+console.log(str2.isWellFormed()); // false
+</code></pre>
+<hr />
+<h4 id="towellformed"><code>toWellFormed()</code></h4>
+<p>Returns a well-formed version of the string by replacing lone surrogates with the Unicode replacement character <code>�</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;ab\uD800&quot;; // Lone surrogate
+
+console.log(str.toWellFormed()); // &quot;ab�&quot;
+</code></pre>
+<hr />
+<h4 id="normalizeform"><code>normalize(form)</code></h4>
+<p>Returns a Unicode-normalized form of the string.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;\u1E9B\u0323&quot;; // &quot;ẛ̣&quot; (ẛ + dot below)
+
+console.log(str.normalize(&quot;NFC&quot;)); // &quot;ṩ&quot; (single character)
+console.log(str.normalize(&quot;NFD&quot;)); // &quot;ẛ̣&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>form</code> (Optional): The normalization form, one of <code>"NFC"</code>, <code>"NFD"</code>, <code>"NFKC"</code>, or <code>"NFKD"</code>. Defaults to <code>"NFC"</code>.</li>
+</ul>
+<hr />
+<h3 id="string-conversion-and-representation">String Conversion and Representation</h3>
+<p>Methods for converting the string to different formats or representations.</p>
+<h4 id="valueof"><code>valueOf()</code></h4>
+<p>Returns the primitive string value of a <code>String</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let strObj = new String(&quot;hello&quot;);
+
+console.log(strObj.valueOf()); // &quot;hello&quot;
+</code></pre>
+<hr />
+<h4 id="tostring"><code>toString()</code></h4>
+<p>Returns the string representation of a given string object or other data types like numbers and arrays.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = new String(&quot;hello&quot;);
+let arr = [1, 2, 3];
+let num = 2025;
+
+console.log(str.toString()); // &quot;hello&quot;
+console.log(arr.toString()); // 1,2,3
+console.log(num.toString()); // &quot;2025&quot;
+</code></pre>
+<hr />
+<h2 id="instance-properties">Instance Properties</h2>
+<h3 id="length"><code>length</code></h3>
+<p>Let you know how many characters in the string</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let str = &quot;Hello&quot;;
+
+console.log(str.length); // 5
+console.log(&quot;😊&quot;.length); // 2 (because it's a surrogate pair)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Array/" class="btn btn-neutral float-left" title="Array"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Array/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
