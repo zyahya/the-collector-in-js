@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/</loc>
+         <lastmod>2025-01-31</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Array/</loc>
+         <lastmod>2025-01-31</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/String/</loc>
+         <lastmod>2025-01-31</lastmod>
+    </url>
 </urlset>
