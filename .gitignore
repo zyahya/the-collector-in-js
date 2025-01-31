@@ -1,7 +1,9 @@
 # directories
 src/
+venv/
 
 # files
 todo.md
 book-fw.md
 draft.md
+
