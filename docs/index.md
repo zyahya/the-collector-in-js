@@ -1,6 +1,6 @@
 # The Collector In JavaScript
 
-### Introduction
+## Introduction
 
 JavaScript is a vast and dynamic language, filled with both essential and less frequently used features. While official documentation provides a comprehensive guide, it can sometimes be overwhelming—especially when you're searching for specific, practical knowledge. This book is not meant to replace the original references but rather to serve as a streamlined companion, offering a more structured and accessible approach.
 
@@ -48,3 +48,19 @@ There are several built-in objects, and their usage can vary depending on the co
 - [Iterator](./Global_Objects/Iterator.md)
 - [Intl](./Global_Objects/Intl.md)
 - [Console](./Global_Objects/Console.md)
+
+### Expressions & operators
+
+### Statements & declarations
+
+### Functions
+
+### Classes
+
+### Regex
+
+### Errors
+
+### Mics
+
+### What Does Not This Book Cover?
