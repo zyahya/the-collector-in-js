@@ -1,8 +1,17 @@
 # Array
 
-The `Array` object in JavaScript is a collection of ordered elements that can store multiple values in a single variable. Arrays are zero-indexed, meaning the first element has an index of 0.
+The `Array` object in JavaScript is a collection of ordered elements that can store multiple values in a single variable. Arrays are zero-indexed, meaning the first element has an index of `0`.
 
 ## Static Methods
+
+This category includes:
+
+- [`Array.from(arrayLike, mapFn, thisArg)`](#arrayfromarraylike-mapfn-thisarg)
+- [`Array.fromAsync(arrayLike, mapFn, thisArg)`](#arrayfromasyncarraylike-mapfn-thisarg)
+- [`Array.isArray(value)`](#arrayisarrayvalue)
+- [`Array.of(elementN)`](#arrayofelementn)
+
+---
 
 ### `Array.from(arrayLike, mapFn, thisArg)`
 
@@ -90,11 +99,22 @@ console.log(Array.of(1, 2, 3)); // [1, 2, 3]
 
 - `elementN`: Elements to include in the new array.
 
+---
+
 ## Instance Methods
 
 ### Accessing Elements
 
 Used to retrieve elements from an array based on their position or check for their existence.
+
+This category includes:
+
+- [`at(index)`](#atindex)
+- [`indexOf(searchElement, fromIndex)`](#indexofsearchelement-fromindex)
+- [`lastIndexOf(searchElement, fromIndex)`](#lastindexofsearchelement-fromindex)
+- [`includes(searchElement, fromIndex)`](#includessearchelement-fromindex)
+
+---
 
 #### `at(index)`
 
@@ -176,9 +196,21 @@ console.log(arr.includes(20, 2)); // false
 - `searchElement`: The value to check for in the array.
 - `fromIndex` (Optional): The index to start the search from. Defaults to `0`.
 
+---
+
 ### Searching & Filtering
 
 Help find specific elements in an array, either by condition or direct match, and filter elements based on criteria.
+
+This category includes:
+
+- [`filter(callbackFn, thisArg)`](#filtercallbackfn-thisarg)
+- [`find(callbackFn, thisArg)`](#findcallbackfn-thisarg)
+- [`findIndex(callbackFn, thisArg)`](#findindexcallbackfn-thisarg)
+- [`findLast(callbackFn, thisArg)`](#findlastcallbackfn-thisarg)
+- [`findLastIndex(callbackFn, thisArg)`](#findlastindexcallbackfn-thisarg)
+
+---
 
 #### `filter(callbackFn, thisArg)`
 
@@ -293,9 +325,22 @@ console.log(result); // 3
   - `array` (Optional): The array that filter was called on.
 - `thisArg` (Optional): Value to use as `this` inside `callbackFn`.
 
+---
+
 ### Adding & Removing Elements
 
 Enable modifying the array by adding or removing elements at the start, middle, or end.
+
+This category includes:
+
+- [`push(elementN)`](#pushelementn)
+- [`pop()`](#pop)
+- [`shift()`](#shift)
+- [`unshift(elementN)`](#unshiftelementn)
+- [`splice(start, deleteCount, ...itemN)`](#splicestart-deletecount-itemn)
+- [`toSpliced(start, deleteCount, ...itemN)`](#tosplicedstart-deletecount-itemn)
+
+---
 
 #### `push(elementN)`
 
@@ -406,9 +451,18 @@ console.log(arr); // [10, 20, 30, 40]
 - `deleteCount` (Optional): The number of elements to remove. Defaults to `0`.
 - `itemN` (Optional): Elements to insert at `start`.
 
+---
+
 ### Conditions
 
 Used to determine if all or some elements meet a specified condition.
+
+This category includes:
+
+- [`every(callbackFn, thisArg)`](#everycallbackfn-thisarg)
+- [`some(callbackFn, thisArg)`](#somecallbackfn-thisarg)
+
+---
 
 #### `every(callbackFn, thisArg)`
 
@@ -454,9 +508,20 @@ console.log(arr.some((num) => num > 40)); // false
   - `array` (Optional): The array that filter was called on.
 - `thisArg` (Optional): Value to use as `this` inside `callbackFn`.
 
+---
+
 ### Sorting & Reversing
 
 Provide ways to order elements in ascending or descending order and reverse their sequence.
+
+This category includes:
+
+- [`sort(compareFn)`](#sortcomparefn)
+- [`toSorted(compareFn)`](#tosortedcomparefn)
+- [`reverse()`](#reverse)
+- [`toReversed()`](#toreversed)
+
+---
 
 #### `sort(compareFn)`
 
@@ -530,6 +595,13 @@ console.log(arr); // [10, 20, 30] (unchanged)
 
 Used for accumulating values from an array into a single result, like sums or averages.
 
+This category includes:
+
+- [`reduce(callbackFn, initialValue)`](#reducecallbackfn-initialvalue)
+- [`reduceRight(callbackFn, initialValue)`](#reducerightcallbackfn-initialvalue)
+
+---
+
 #### `reduce(callbackFn, initialValue)`
 
 Applies `callbackFn` to each element, accumulating a single result from left to right.
@@ -576,9 +648,17 @@ console.log(result); // "cba"
   - `array` (Optional): The array `reduceRight` was called on.
 - `initialValue` (Optional): The initial value to start the accumulation. If omitted, the first element of the array will be used as the initial value and the iteration will start from the second element.
 
+---
+
 ### Extracting & Slicing
 
 Provide ways to extract portions of an array without modifying the original.
+
+This category includes:
+
+- [`slice(start, end)`](#slicestart-end)
+
+---
 
 #### `slice(start, end)`
 
@@ -600,9 +680,18 @@ console.log(arr); // [10, 20, 30, 40, 50] (unchanged)
 - `start`: The index to begin slicing. Defaults to `0`.
 - `end` (Optional): The index to stop slicing (not included). Defaults to the array length.
 
+---
+
 ### Copying & Modifying
 
 Allow duplicating and modifying elements within an array without adding or removing anything.
+
+This category includes:
+
+- [`copyWithin(target, start, end)`](#copywithintarget-start-end)
+- [`fill(value, start, end)`](#fillvalue-start-end)
+
+---
 
 #### `copyWithin(target, start, end)`
 
@@ -644,9 +733,20 @@ console.log(arr); // [1, 0, 0, 0, 5] (modified)
 - `start` (Optional): The index to begin filling. Defaults to `0`.
 - `end` (Optional): The index to stop filling (not included). Defaults to the array length.
 
+---
+
 ### Creation & Combination
 
 These functions help in creating new arrays by merging, flattening, or modifying existing ones.
+
+This category includes:
+
+- [`concat(arrN)`](#concatarrn)
+- [`flat(depth)`](#flatdepth)
+- [`flatMap(callbackFn, thisArg)`](#flatmapcallbackfn-thisarg)
+- [`with(index, value)`](#withindex-value)
+
+---
 
 #### `concat(arrN)`
 
@@ -726,11 +826,19 @@ console.log(arr); // [10, 20, 30] (unchanged)
 - `index`: The position of the element to replace.
 - `value`: The new value to insert at `index`.
 
+---
+
 ### String Conversion
 
 Convert arrays into strings, either directly or with specific formatting.
 
-Return iterable objects that allow traversing an array’s elements with key-value pairs.
+This category includes:
+
+- [`toString()`](#tostring)
+- [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
+- [`join(separator)`](#joinseparator)
+
+---
 
 #### `toString()`
 
@@ -783,12 +891,24 @@ console.log(arr.join()); // "apple,banana,cherry" (default separator is ",")
 
 - `separator` (Optional): The string to place between elements. Defaults to `","`.
 
+---
+
 ### Iteration & Transformation
+
+Return iterable objects that allow traversing an array’s elements with key-value pairs.
+
+This category includes:
+
+- [`map(callbackFn, thisArg)`](#mapcallbackfn-thisarg)
+- [`forEach(callbackFn, thisArg)`](#foreachcallbackfn-thisarg)
+- [`entries()`](#entries)
+
+---
 
 #### `map(callbackFn, thisArg)`
 
 Creates a new array by applying `callbackFn` to each element of the original array.
-
+This category includes:
 **Example:**
 
 ```js
@@ -850,11 +970,11 @@ for (let [index, value] of arr.entries()) {
 // 2 "z"
 ```
 
+---
+
 ## Instance Properties
 
 ### `length`
-
-#### `length` property
 
 Represents the number of elements in the array. Can be used to get or set the array's length.
 
