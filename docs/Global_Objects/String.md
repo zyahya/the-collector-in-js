@@ -546,6 +546,8 @@ console.log(str.padEnd(5)); // "42   "
 
 ### Replacement
 
+Methods for replace existing values in a string, with the new value you will provide.
+
 This category includes:
 
 - [`replace(regex, replacement)`](#replaceregex-replacement)
