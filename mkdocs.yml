@@ -3,6 +3,6 @@ site_url: https://zyahya.github.io/the-collector-in-js/
 repo_url: https://github.com/zyahya/the-collector-in-js/
 site_description: The Ultimate JavaScript Quick Reference Guide – Simplified, Structured, and Straight to the Point!
 site_author: Ziad Yahya
-copyright: CC BY 4.0
+copyright: The Collector In JavaScript by Ziad Yahya is licensed under CC BY 4.0
 theme:
   name: readthedocs
