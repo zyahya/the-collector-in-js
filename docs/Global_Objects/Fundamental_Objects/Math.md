@@ -8,8 +8,6 @@ The `Math` object in JavaScript provides a collection of properties and methods 
 
 Functions that perform basic arithmetic operations or manipulate numbers in simple ways.
 
-This category includes:
-
 - [`Math.abs(x)`](#mathabsx)
 - [`Math.ceil(x)`](#mathceilx)
 - [`Math.floor(x)`](#mathfloorx)
@@ -253,8 +251,6 @@ console.log(Math.imul(0xffffffff, 5)); // -5
 
 Functions that perform trigonometric calculations, including inverse and hyperbolic variants.
 
-This category includes:
-
 - [`Math.sin(x)`](#mathsinx)
 - [`Math.cos(x)`](#mathcosx)
 - [`Math.tan(x)`](#mathtanx)
@@ -497,8 +493,6 @@ console.log(Math.atanh(2)); // NaN
 
 Functions that deal with logarithms, exponents, and related calculations.
 
-This category includes:
-
 - [`Math.exp(x)`](#mathexpx)
 - [`Math.expm1(x)`](#mathexpm1x)
 - [`Math.log(x)`](#mathlogx)
@@ -614,8 +608,6 @@ console.log(Math.log2(1)); // 0
 
 Functions that handle rounding numbers or adjusting their precision.
 
-This category includes:
-
 - [`Math.fround(x)`](#mathfroundx)
 - [`Math.f16round(x)`](#mathf16roundx)
 
@@ -659,8 +651,6 @@ console.log(Math.f16round(1.5)); // 1.5
 
 Functions that operate on the binary representation of numbers.
 
-This category includes:
-
 - [`Math.clz32(x)`](#mathclz32x)
 
 ---
@@ -686,8 +676,6 @@ console.log(Math.clz32(1000)); // 22
 
 Functions that generate random numbers.
 
-This category includes:
-
 - [`Math.random()`](#mathrandom)
 
 ---
@@ -709,8 +697,6 @@ This chapter provides a concise yet comprehensive overview of the `Math` object'
 ## Static Properties
 
 Static properties that represent commonly used mathematical constants.
-
-This category includes:
 
 - [`Math.E`](#mathe)
 - [`Math.LN10`](#mathln10)

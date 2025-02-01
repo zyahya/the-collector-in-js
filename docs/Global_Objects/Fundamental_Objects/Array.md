@@ -4,8 +4,6 @@ The `Array` object in JavaScript is a collection of ordered elements that can st
 
 ## Static Methods
 
-This category includes:
-
 - [`Array.from(arrayLike, mapFn, thisArg)`](#arrayfromarraylike-mapfn-thisarg)
 - [`Array.fromAsync(arrayLike, mapFn, thisArg)`](#arrayfromasyncarraylike-mapfn-thisarg)
 - [`Array.isArray(value)`](#arrayisarrayvalue)
@@ -107,8 +105,6 @@ console.log(Array.of(1, 2, 3)); // [1, 2, 3]
 
 Used to retrieve elements from an array based on their position or check for their existence.
 
-This category includes:
-
 - [`at(index)`](#atindex)
 - [`indexOf(searchElement, fromIndex)`](#indexofsearchelement-fromindex)
 - [`lastIndexOf(searchElement, fromIndex)`](#lastindexofsearchelement-fromindex)
@@ -201,8 +197,6 @@ console.log(arr.includes(20, 2)); // false
 ### Searching & Filtering
 
 Help find specific elements in an array, either by condition or direct match, and filter elements based on criteria.
-
-This category includes:
 
 - [`filter(callbackFn, thisArg)`](#filtercallbackfn-thisarg)
 - [`find(callbackFn, thisArg)`](#findcallbackfn-thisarg)
@@ -331,8 +325,6 @@ console.log(result); // 3
 
 Enable modifying the array by adding or removing elements at the start, middle, or end.
 
-This category includes:
-
 - [`push(elementN)`](#pushelementn)
 - [`pop()`](#pop)
 - [`shift()`](#shift)
@@ -457,8 +449,6 @@ console.log(arr); // [10, 20, 30, 40]
 
 Used to determine if all or some elements meet a specified condition.
 
-This category includes:
-
 - [`every(callbackFn, thisArg)`](#everycallbackfn-thisarg)
 - [`some(callbackFn, thisArg)`](#somecallbackfn-thisarg)
 
@@ -513,8 +503,6 @@ console.log(arr.some((num) => num > 40)); // false
 ### Sorting & Reversing
 
 Provide ways to order elements in ascending or descending order and reverse their sequence.
-
-This category includes:
 
 - [`sort(compareFn)`](#sortcomparefn)
 - [`toSorted(compareFn)`](#tosortedcomparefn)
@@ -595,8 +583,6 @@ console.log(arr); // [10, 20, 30] (unchanged)
 
 Used for accumulating values from an array into a single result, like sums or averages.
 
-This category includes:
-
 - [`reduce(callbackFn, initialValue)`](#reducecallbackfn-initialvalue)
 - [`reduceRight(callbackFn, initialValue)`](#reducerightcallbackfn-initialvalue)
 
@@ -654,8 +640,6 @@ console.log(result); // "cba"
 
 Provide ways to extract portions of an array without modifying the original.
 
-This category includes:
-
 - [`slice(start, end)`](#slicestart-end)
 
 ---
@@ -685,8 +669,6 @@ console.log(arr); // [10, 20, 30, 40, 50] (unchanged)
 ### Copying & Modifying
 
 Allow duplicating and modifying elements within an array without adding or removing anything.
-
-This category includes:
 
 - [`copyWithin(target, start, end)`](#copywithintarget-start-end)
 - [`fill(value, start, end)`](#fillvalue-start-end)
@@ -738,8 +720,6 @@ console.log(arr); // [1, 0, 0, 0, 5] (modified)
 ### Creation & Combination
 
 These functions help in creating new arrays by merging, flattening, or modifying existing ones.
-
-This category includes:
 
 - [`concat(arrN)`](#concatarrn)
 - [`flat(depth)`](#flatdepth)
@@ -832,8 +812,6 @@ console.log(arr); // [10, 20, 30] (unchanged)
 
 Convert arrays into strings, either directly or with specific formatting.
 
-This category includes:
-
 - [`toString()`](#tostring)
 - [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
 - [`join(separator)`](#joinseparator)
@@ -897,8 +875,6 @@ console.log(arr.join()); // "apple,banana,cherry" (default separator is ",")
 
 Return iterable objects that allow traversing an array’s elements with key-value pairs.
 
-This category includes:
-
 - [`map(callbackFn, thisArg)`](#mapcallbackfn-thisarg)
 - [`forEach(callbackFn, thisArg)`](#foreachcallbackfn-thisarg)
 - [`entries()`](#entries)
@@ -908,7 +884,7 @@ This category includes:
 #### `map(callbackFn, thisArg)`
 
 Creates a new array by applying `callbackFn` to each element of the original array.
-This category includes:
+
 **Example:**
 
 ```js

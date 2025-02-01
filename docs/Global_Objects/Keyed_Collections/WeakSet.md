@@ -1,0 +1,1 @@
+The `WeakSet` object in JavaScript represents a collection of weakly held objects. Unlike `Set`, it does not prevent garbage collection of its elements, making it suitable for managing memory-sensitive data.

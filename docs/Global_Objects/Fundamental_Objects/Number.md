@@ -41,8 +41,6 @@ console.log(typeof numObj); // "object"
 
 ## Static Methods
 
-This category includes:
-
 - [`Number.isFinite(value)`](#numberisfinitevalue)
 - [`Number.isInteger(value)`](#numberisintegervalue)
 - [`Number.isNaN(value)`](#numberisnanvalue)
@@ -163,8 +161,6 @@ console.log(Number.parseInt("px10")); // NaN
 
 ## Static Properties
 
-This category includes:
-
 - [`Number.EPSILON`](#numberepsilon)
 - [`Number.MAX_SAFE_INTEGER`](#numbermax_safe_integer)
 - [`Number.MAX_VALUE`](#numbermax_value)
@@ -274,8 +270,6 @@ console.log(1 / 0); // Infinity
 ---
 
 ## Instance Methods
-
-This category includes:
 
 - [`toExponential(fractionDigits)`](#toexponentialfractiondigits)
 - [`toFixed(digits)`](#tofixeddigits)

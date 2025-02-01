@@ -1,0 +1,1 @@
+The `RegExp` object in JavaScript represents a regular expression, a pattern used to match and manipulate text. It provides methods for testing, searching, and replacing text based on the specified pattern.

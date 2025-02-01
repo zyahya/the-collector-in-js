@@ -1,0 +1,1 @@
+The `WeakMap` object in JavaScript represents a collection of key-value pairs with weakly held keys. Unlike `Map`, it allows garbage collection of its keys, making it ideal for scenarios where memory management is critical.

@@ -4,8 +4,6 @@ The `String` object in JavaScript represents a sequence of characters. It provid
 
 ## Static Methods
 
-This category includes:
-
 - [`String.raw(templateString)`](#stringrawtemplatestring)
 - [`String.fromCharCode(...numN)`](#stringfromcharcodenumn)
 - [`String.fromCodePoint(args)`](#stringfromcodepointargs)
@@ -70,8 +68,6 @@ console.log(String.fromCodePoint(0x1f600)); // "😀"
 ### Character Access and Manipulation
 
 These methods allow you to access specific characters or code points and manipulate characters.
-
-This category includes:
 
 - [`at(index)`](#atindex)
 - [`charAt(index)`](#charatindex)
@@ -161,8 +157,6 @@ console.log(str.codePointAt(1)); // 66 (B)
 ### Searching and Matching
 
 Methods for checking if a string contains certain substrings or matches patterns.
-
-This category includes:
 
 - [`startsWith(searchString, endPosition)`](#startswithsearchstring-endposition)
 - [`endsWith(searchString, endPosition)`](#endswithsearchstring-endposition)
@@ -343,8 +337,6 @@ console.log([...matches]); // [["123"], ["456"]]
 
 Methods for extracting or splitting parts of the string.
 
-This category includes:
-
 - [`slice(indexStart, indexEnd)`](#sliceindexstart-indexend)
 - [`substring(indexStart, indexEnd)`](#substringindexstart-indexend)
 - [`split(separator, limit)`](#splitseparator-limit)
@@ -417,8 +409,6 @@ console.log(str.split("")); // ["a", "p", "p", "l", "e", ",", "b", "a", "n", "a"
 ### Case Conversion
 
 Methods for converting string characters to different cases or locale-specific variations.
-
-This category includes:
 
 - [`toLowerCase()`](#tolowercase)
 - [`toUpperCase()`](#touppercase)
@@ -497,8 +487,6 @@ console.log(str.toLocaleLowerCase("en")); // "i"
 
 Methods for padding strings to a certain length by adding characters.
 
-This category includes:
-
 - [`padStart(targetLength, padString)`](#padstarttargetlength-padstring)
 - [`padEnd(targetLength, padString)`](#padendtargetlength-padstring)
 
@@ -548,8 +536,6 @@ console.log(str.padEnd(5)); // "42   "
 
 Methods for replace existing values in a string, with the new value you will provide.
 
-This category includes:
-
 - [`replace(regex, replacement)`](#replaceregex-replacement)
 - [`replaceAll(regex, replacement)`](#replaceallregex-replacement)
 
@@ -597,8 +583,6 @@ console.log(str.replaceAll(/o/g, "O")); // "hellO wOrld, wOrld!"
 
 ### Concatenation
 
-This category includes:
-
 - [`concat(strN)`](#concatstrn)
 
 ---
@@ -624,8 +608,6 @@ console.log(str.concat(" ", "World", "!")); // "Hello World!"
 ### Whitespace Handling
 
 These methods focus on trimming and adjusting the spaces around or inside the string.
-
-This category includes:
 
 - [`trim()`](#trim)
 - [`trimStart()`](#trimstart)
@@ -682,8 +664,6 @@ An alternative to `trimEnd()` do the same behavior is `trimRight()`.
 ### Repetition and Normalization
 
 Methods related to repeating strings or ensuring proper encoding.
-
-This category includes:
 
 - [`repeat(count)`](#repeatcount)
 - [`isWellFormed()`](#iswellformed)
@@ -763,8 +743,6 @@ console.log(str.normalize("NFD")); // "ẛ̣"
 ### String Conversion and Representation
 
 Methods for converting the string to different formats or representations.
-
-This category includes:
 
 - [`valueOf()`](#valueof)
 - [`toString()`](#tostring)
