@@ -47,6 +47,36 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../Array/">Array</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Boolean/">Boolean</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Console/">Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Date/">Date</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Error/">Error</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Function/">Function</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Intl/">Intl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Iterator/">Iterator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../JSON/">JSON</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Math/">Math</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Number/">Number</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Object/">Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Promise/">Promise</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../RegExp/">RegExp</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Set/">Set</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">String</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#static-methods">Static Methods</a>
@@ -177,6 +207,12 @@
     </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Symbol/">Symbol</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../WeakMap/">WeakMap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../WeakSet/">WeakSet</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -206,6 +242,13 @@
                 <h1 id="string">String</h1>
 <p>The <code>String</code> object in JavaScript represents a sequence of characters. It provides a variety of methods and properties for manipulating and inspecting strings.</p>
 <h2 id="static-methods">Static Methods</h2>
+<p>This category includes:</p>
+<ul>
+<li><a href="#stringrawtemplatestring"><code>String.raw(templateString)</code></a></li>
+<li><a href="#stringfromcharcodenumn"><code>String.fromCharCode(...numN)</code></a></li>
+<li><a href="#stringfromcodepointargs"><code>String.fromCodePoint(args)</code></a></li>
+</ul>
+<hr />
 <h3 id="stringrawtemplatestring"><code>String.raw(templateString)</code></h3>
 <p>Returns a raw string from a template literal, escaping any special characters (like backslashes) in the template literal as-is.</p>
 <p><strong>Example:</strong></p>
@@ -244,6 +287,14 @@ console.log(String.fromCodePoint(0x1f600)); // &quot;😀&quot;
 <h2 id="instance-methods">Instance Methods</h2>
 <h3 id="character-access-and-manipulation">Character Access and Manipulation</h3>
 <p>These methods allow you to access specific characters or code points and manipulate characters.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#atindex"><code>at(index)</code></a></li>
+<li><a href="#charatindex"><code>charAt(index)</code></a></li>
+<li><a href="#charcodeatindex"><code>charCodeAt(index)</code></a></li>
+<li><a href="#codepointatindex"><code>codePointAt(index)</code></a></li>
+</ul>
+<hr />
 <h4 id="atindex"><code>at(index)</code></h4>
 <p>Returns the character at a given index, allowing negative indices for counting from the end.</p>
 <p><strong>Example:</strong></p>
@@ -300,6 +351,18 @@ console.log(str.codePointAt(1)); // 66 (B)
 <hr />
 <h3 id="searching-and-matching">Searching and Matching</h3>
 <p>Methods for checking if a string contains certain substrings or matches patterns.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#startswithsearchstring-endposition"><code>startsWith(searchString, endPosition)</code></a></li>
+<li><a href="#endswithsearchstring-endposition"><code>endsWith(searchString, endPosition)</code></a></li>
+<li><a href="#includessearchstring-position"><code>includes(searchString, position)</code></a></li>
+<li><a href="#searchregexp"><code>search(regexp)</code></a></li>
+<li><a href="#indexofsearchstring-position"><code>indexOf(searchString, position)</code></a></li>
+<li><a href="#lastindexofsearchstring-position"><code>lastIndexOf(searchString, position)</code></a></li>
+<li><a href="#matchregexp"><code>match(regexp)</code></a></li>
+<li><a href="#matchallregexp"><code>matchAll(regexp)</code></a></li>
+</ul>
+<hr />
 <h4 id="startswithsearchstring-endposition"><code>startsWith(searchString, endPosition)</code></h4>
 <p>Checks if a string starts with a given substring. Returns <code>true</code> if it does, otherwise returns <code>false</code>.</p>
 <p><strong>Example:</strong></p>
@@ -418,6 +481,13 @@ console.log([...matches]); // [[&quot;123&quot;], [&quot;456&quot;]]
 <hr />
 <h3 id="extraction-and-splitting">Extraction and Splitting</h3>
 <p>Methods for extracting or splitting parts of the string.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#sliceindexstart-indexend"><code>slice(indexStart, indexEnd)</code></a></li>
+<li><a href="#substringindexstart-indexend"><code>substring(indexStart, indexEnd)</code></a></li>
+<li><a href="#splitseparator-limit"><code>split(separator, limit)</code></a></li>
+</ul>
+<hr />
 <h4 id="sliceindexstart-indexend"><code>slice(indexStart, indexEnd)</code></h4>
 <p>Extracts a section of a string and returns a new string without modifying the original.</p>
 <p><strong>Example:</strong></p>
@@ -465,6 +535,14 @@ console.log(str.split(&quot;&quot;)); // [&quot;a&quot;, &quot;p&quot;, &quot;p&
 <hr />
 <h3 id="case-conversion">Case Conversion</h3>
 <p>Methods for converting string characters to different cases or locale-specific variations.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#tolowercase"><code>toLowerCase()</code></a></li>
+<li><a href="#touppercase"><code>toUpperCase()</code></a></li>
+<li><a href="#tolocaleuppercaselocales"><code>toLocaleUpperCase(locales)</code></a></li>
+<li><a href="#tolocalelowercaselocales"><code>toLocaleLowerCase(locales)</code></a></li>
+</ul>
+<hr />
 <h4 id="tolowercase"><code>toLowerCase()</code></h4>
 <p>Converts all characters in a string to lowercase and returns a new string.</p>
 <p><strong>Example:</strong></p>
@@ -509,6 +587,12 @@ console.log(str.toLocaleLowerCase(&quot;en&quot;)); // &quot;i&quot;
 <hr />
 <h3 id="padding">Padding</h3>
 <p>Methods for padding strings to a certain length by adding characters.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#padstarttargetlength-padstring"><code>padStart(targetLength, padString)</code></a></li>
+<li><a href="#padendtargetlength-padstring"><code>padEnd(targetLength, padString)</code></a></li>
+</ul>
+<hr />
 <h4 id="padstarttargetlength-padstring"><code>padStart(targetLength, padString)</code></h4>
 <p>Pads the current string with another string (or spaces by default) at the beginning until it reaches the specified length.</p>
 <p><strong>Example:</strong></p>
@@ -538,6 +622,13 @@ console.log(str.padEnd(5)); // &quot;42   &quot;
 </ul>
 <hr />
 <h3 id="replacement">Replacement</h3>
+<p>Methods for replace existing values in a string, with the new value you will provide.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#replaceregex-replacement"><code>replace(regex, replacement)</code></a></li>
+<li><a href="#replaceallregex-replacement"><code>replaceAll(regex, replacement)</code></a></li>
+</ul>
+<hr />
 <h4 id="replaceregex-replacement"><code>replace(regex, replacement)</code></h4>
 <p>Replaces the first match of a given substring or regular expression with a new string.</p>
 <p><strong>Example:</strong></p>
@@ -567,6 +658,11 @@ console.log(str.replaceAll(/o/g, &quot;O&quot;)); // &quot;hellO wOrld, wOrld!&q
 </ul>
 <hr />
 <h3 id="concatenation">Concatenation</h3>
+<p>This category includes:</p>
+<ul>
+<li><a href="#concatstrn"><code>concat(strN)</code></a></li>
+</ul>
+<hr />
 <h4 id="concatstrn"><code>concat(strN)</code></h4>
 <p>Concatenates one or more strings and returns a new string.</p>
 <p><strong>Example:</strong></p>
@@ -581,6 +677,13 @@ console.log(str.concat(&quot; &quot;, &quot;World&quot;, &quot;!&quot;)); // &qu
 <hr />
 <h3 id="whitespace-handling">Whitespace Handling</h3>
 <p>These methods focus on trimming and adjusting the spaces around or inside the string.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#trim"><code>trim()</code></a></li>
+<li><a href="#trimstart"><code>trimStart()</code></a></li>
+<li><a href="#trimend"><code>trimEnd()</code></a></li>
+</ul>
+<hr />
 <h4 id="trim"><code>trim()</code></h4>
 <p>Removes whitespace from both ends of a string and returns a new string.</p>
 <p><strong>Example:</strong></p>
@@ -609,6 +712,14 @@ console.log(str.trimEnd()); // &quot;  hello&quot;
 <hr />
 <h3 id="repetition-and-normalization">Repetition and Normalization</h3>
 <p>Methods related to repeating strings or ensuring proper encoding.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#repeatcount"><code>repeat(count)</code></a></li>
+<li><a href="#iswellformed"><code>isWellFormed()</code></a></li>
+<li><a href="#towellformed"><code>toWellFormed()</code></a></li>
+<li><a href="#normalizeform"><code>normalize(form)</code></a></li>
+</ul>
+<hr />
 <h4 id="repeatcount"><code>repeat(count)</code></h4>
 <p>Returns a new string containing the original string repeated <code>count</code> times.</p>
 <p><strong>Example:</strong></p>
@@ -655,6 +766,12 @@ console.log(str.normalize(&quot;NFD&quot;)); // &quot;ẛ̣&quot;
 <hr />
 <h3 id="string-conversion-and-representation">String Conversion and Representation</h3>
 <p>Methods for converting the string to different formats or representations.</p>
+<p>This category includes:</p>
+<ul>
+<li><a href="#valueof"><code>valueOf()</code></a></li>
+<li><a href="#tostring"><code>toString()</code></a></li>
+</ul>
+<hr />
 <h4 id="valueof"><code>valueOf()</code></h4>
 <p>Returns the primitive string value of a <code>String</code> object.</p>
 <p><strong>Example:</strong></p>
@@ -688,14 +805,15 @@ console.log(&quot;😊&quot;.length); // 2 (because it's a surrogate pair)
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Array/" class="btn btn-neutral float-left" title="Array"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Set/" class="btn btn-neutral float-left" title="Set"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Symbol/" class="btn btn-neutral float-right" title="Symbol">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>CC BY 4.0</p>
+      <p>The Collector In JavaScript by Ziad Yahya is licensed under CC BY 4.0</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
@@ -716,8 +834,10 @@ console.log(&quot;😊&quot;.length); // 2 (because it's a surrogate pair)
         </span>
     
     
-      <span><a href="../Array/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Set/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../Symbol/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

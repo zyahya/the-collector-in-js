@@ -2,14 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zyahya.github.io/the-collector-in-js/</loc>
-         <lastmod>2025-01-31</lastmod>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Array/</loc>
-         <lastmod>2025-01-31</lastmod>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Boolean/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Console/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Date/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Error/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Function/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Intl/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Iterator/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/JSON/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Map/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Math/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Number/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Object/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Promise/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/RegExp/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Set/</loc>
+         <lastmod>2025-02-01</lastmod>
     </url>
     <url>
          <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/String/</loc>
-         <lastmod>2025-01-31</lastmod>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/Symbol/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/WeakMap/</loc>
+         <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://zyahya.github.io/the-collector-in-js/Global_Objects/WeakSet/</loc>
+         <lastmod>2025-02-01</lastmod>
     </url>
 </urlset>

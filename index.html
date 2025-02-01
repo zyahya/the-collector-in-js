@@ -48,6 +48,22 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#global-objects">Global Objects</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#expressions-operators">Expressions &amp; operators</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#statements-declarations">Statements &amp; declarations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#regex">Regex</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errors">Errors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mics">Mics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-does-not-this-book-cover">What Does Not This Book Cover?</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -57,7 +73,43 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Array/">Array</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Boolean/">Boolean</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Console/">Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Date/">Date</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Error/">Error</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Function/">Function</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Intl/">Intl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Iterator/">Iterator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/JSON/">JSON</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Map/">Map</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Math/">Math</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Number/">Number</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Object/">Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Promise/">Promise</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/RegExp/">RegExp</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Set/">Set</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="Global_Objects/String/">String</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/Symbol/">Symbol</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/WeakMap/">WeakMap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Global_Objects/WeakSet/">WeakSet</a>
                   </li>
               </ul>
       </div>
@@ -99,37 +151,44 @@
 <p><strong>Concise and to the Point</strong> – Unlike traditional references that provide exhaustive details, this book follows a minimalist approach. Each topic is presented in a compact format that delivers exactly what you need, without unnecessary complexity. For example, functions in this book are explained in three simple sections: <strong>Definition</strong> – What the function does, including its purpose and the type of value it returns. <strong>Practical Example</strong> – A straightforward code snippet demonstrating its usage. <strong>Parameters Breakdown</strong> – A clear explanation of the inputs the function accepts.</p>
 </li>
 </ol>
-<p>To ensure accuracy and reliability, this book is based on well-established resources, primarily the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a>. MDN serves as one of the most trusted references for JavaScript, and I have used it extensively as a foundation for gathering and refining the information presented here. However, rather than simply replicating its content, this book reorganizes and simplifies key concepts to make them more accessible and easier to grasp.</p>
+<p>To ensure accuracy and reliability, this book is based on well-established resources, primarily the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><strong>MDN Web Docs</strong></a>. MDN serves as one of the most trusted references for JavaScript, and I have used it extensively as a foundation for gathering and refining the information presented here.</p>
+<p>Additionally, this book was crafted with the assistance of <strong>artificial intelligence</strong>, not as a replacement for human expertise, but as a powerful tool to enhance organization, clarity, and efficiency. AI helped in structuring the content, summarizing key concepts, and refining explanations to ensure a smooth and accessible learning experience. However, every decision—what to include, how to present it, and how to make it truly useful—was guided by careful thought and human insight.</p>
 <p>By following this approach, this book ensures that you get the right information, in the right way, at the right time. Whether you're a beginner looking for clarity or an experienced developer seeking a quick reference, this book is designed to make your JavaScript journey smoother and more efficient.</p>
-<p>Let's dive in!</p>
+<p>Let’s dive in!</p>
 <h2 id="what-does-this-book-cover">What Does This Book Cover?</h2>
 <h3 id="global-objects">Global Objects</h3>
 <p>In JavaScript, built-in objects, also known as global objects, are predefined objects that are available for use throughout your code without the need for explicit declarations. These objects provide essential functionalities and utilities, such as working with numbers, strings, arrays, dates, and more. Some well-known global objects include <code>Object</code>, <code>Array</code>, <code>Function</code>, <code>Math</code>, <code>Date</code>, and <code>JSON</code>, among others. These objects are part of the global execution context, meaning they can be accessed directly in any part of your code, making them a foundational aspect of JavaScript programming. Understanding how to work with these built-in objects is key to writing efficient and effective JavaScript code.</p>
 <p>There are several built-in objects, and their usage can vary depending on the context. These objects cover a wide range of functionality in JavaScript and are central to working with both data and code execution.</p>
 <ul>
-<li><a href="./Global_Objects/Object.md">Object</a></li>
+<li><a href="Global_Objects/Object/">Object</a></li>
 <li><a href="Global_Objects/Array/">Array</a></li>
-<li><a href="./Global_Objects/Function.md">Function</a></li>
+<li><a href="Global_Objects/Function/">Function</a></li>
 <li><a href="Global_Objects/String/">String</a></li>
-<li><a href="./Global_Objects/Number.md">Number</a></li>
-<li><a href="./Global_Objects/Boolean.md">Boolean</a></li>
-<li><a href="./Global_Objects/Math.md">Math</a></li>
-<li><a href="./Global_Objects/Date.md">Date</a></li>
-<li><a href="./Global_Objects/RegExp.md">RegExp</a></li>
-<li><a href="./Global_Objects/Error.md">Error</a></li>
-<li><a href="./Global_Objects/Promise.md">Promise</a></li>
-<li><a href="./Global_Objects/Set.md">Set</a></li>
-<li><a href="./Global_Objects/Map.md">Map</a></li>
-<li><a href="./Global_Objects/WeakSet.md">WeakSet</a></li>
-<li><a href="./Global_Objects/WeakMap.md">WeakMap</a></li>
-<li><a href="./Global_Objects/JSON.md">JSON</a></li>
-<li><a href="./Global_Objects/Symbol.md">Symbol</a></li>
-<li><a href="./Global_Objects/Iterator.md">Iterator</a></li>
-<li><a href="./Global_Objects/Intl.md">Intl</a></li>
-<li><a href="./Global_Objects/Console.md">Console</a></li>
+<li><a href="Global_Objects/Number/">Number</a></li>
+<li><a href="Global_Objects/Boolean/">Boolean</a></li>
+<li><a href="Global_Objects/Math/">Math</a></li>
+<li><a href="Global_Objects/Date/">Date</a></li>
+<li><a href="Global_Objects/RegExp/">RegExp</a></li>
+<li><a href="Global_Objects/Error/">Error</a></li>
+<li><a href="Global_Objects/Promise/">Promise</a></li>
+<li><a href="Global_Objects/Set/">Set</a></li>
+<li><a href="Global_Objects/Map/">Map</a></li>
+<li><a href="Global_Objects/WeakSet/">WeakSet</a></li>
+<li><a href="Global_Objects/WeakMap/">WeakMap</a></li>
+<li><a href="Global_Objects/JSON/">JSON</a></li>
+<li><a href="Global_Objects/Symbol/">Symbol</a></li>
+<li><a href="Global_Objects/Iterator/">Iterator</a></li>
+<li><a href="Global_Objects/Intl/">Intl</a></li>
+<li><a href="Global_Objects/Console/">Console</a></li>
 </ul>
-<hr />
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/zyahya/the-collector-in-js">The Collector In JavaScript</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/zyahya">Ziad Yahya</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+<h3 id="expressions-operators">Expressions &amp; operators</h3>
+<h3 id="statements-declarations">Statements &amp; declarations</h3>
+<h3 id="functions">Functions</h3>
+<h3 id="classes">Classes</h3>
+<h3 id="regex">Regex</h3>
+<h3 id="errors">Errors</h3>
+<h3 id="mics">Mics</h3>
+<h3 id="what-does-not-this-book-cover">What Does Not This Book Cover?</h3>
               
             </div>
           </div><footer>
@@ -141,7 +200,7 @@
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>CC BY 4.0</p>
+      <p>The Collector In JavaScript by Ziad Yahya is licensed under CC BY 4.0</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
@@ -183,5 +242,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-01-31 19:18:56.621488+00:00
+Build Date UTC : 2025-02-01 11:38:18.214441+00:00
 -->
