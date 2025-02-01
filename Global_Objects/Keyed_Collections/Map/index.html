@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ziad Yahya" /><link rel="canonical" href="https://zyahya.github.io/the-collector-in-js/Global_Objects/Keyed_Collections/Map/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Map - The Collector In JavaScript</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Map";
+        var mkdocs_page_input_path = "Global_Objects/Keyed_Collections/Map.md";
+        var mkdocs_page_url = "/the-collector-in-js/Global_Objects/Keyed_Collections/Map/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> The Collector In JavaScript
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">The Collector In JavaScript</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Global Objects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Function Properties</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/eval/">Eval</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/isFinite/">isFinite</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/isNaN/">isNaN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/parseInt/">parseInt</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Fundamental Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Array/">Array</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Boolean/">Boolean</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Date/">Date</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Error/">Error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/JSON/">JSON</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Math/">Math</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Number/">Number</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/Object/">Object</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/RegExp/">RegExp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Fundamental_Objects/String/">String</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Keyed Collections</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Map</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#map-constructor">Map() Constructor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-methods">Static Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mapgroupbyarray-callbackfn">Map.groupBy(array, callbackFn)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-properties">Static Properties</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mapsymbolspecies">Map[Symbol.species]</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instance-methods">Instance Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#clear">clear()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deletekey">delete(key)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#entries">entries()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#foreachcallbackfn-thisarg">forEach(callbackFn, thisArg)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getkey">get(key)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#haskey">has(key)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#keys">keys()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setkey-value">set(key, value)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#values">values()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#symboliterator">[Symbol.iterator]()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instance-properties">Instance Properties</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#size">size</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Set/">Set</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../WeakMap/">WeakMap</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../WeakSet/">WeakSet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Value Properties</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/Infinity/">Infinity</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/NaN/">NaN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/globalThis/">globalThis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/undefined/">Undefined</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">The Collector In JavaScript</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Global Objects</li>
+          <li class="breadcrumb-item">Keyed Collections</li>
+      <li class="breadcrumb-item active">Map</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/zyahya/the-collector-in-js/edit/master/docs/Global_Objects/Keyed_Collections/Map.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="map">Map</h1>
+<p>The <code>Map</code> object in JavaScript represents a collection of key-value pairs. It provides methods for adding, retrieving, and iterating over entries, with keys of any data type supported.</p>
+<h2 id="map-constructor"><code>Map()</code> Constructor</h2>
+<p>Creates a new Map object. A Map holds key-value pairs where keys can be any datatype and the values can also be any datatype.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+map.set(1, &quot;One&quot;);
+
+console.log(map.get(&quot;name&quot;)); // John
+console.log(map.get(1)); // One
+</code></pre>
+<hr />
+<h2 id="static-methods">Static Methods</h2>
+<h3 id="mapgroupbyarray-callbackfn"><code>Map.groupBy(array, callbackFn)</code></h3>
+<p>Creates an object grouped by the results of the callback function. Useful for transforming a collection into a structured form.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">const numbers = [1, 2, 3, 4, 5];
+const grouped = Map.groupBy(numbers, (num) =&gt; (num % 2 === 0 ? &quot;even&quot; : &quot;odd&quot;));
+
+console.log(grouped); // { even: [2, 4], odd: [1, 3, 5] }
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>array</code>: The array to group.</li>
+<li><code>callbackFn</code>: A function used to group the values in the array.</li>
+</ul>
+<hr />
+<h2 id="static-properties">Static Properties</h2>
+<h3 id="mapsymbolspecies"><code>Map[Symbol.species]</code></h3>
+<p>Specifies the constructor function that should be used to create derived objects. It is used in cases like <code>Map</code> being subclassed.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+console.log(map[Symbol.species]); // [Function: Map]
+</code></pre>
+<hr />
+<h2 id="instance-methods">Instance Methods</h2>
+<ul>
+<li><a href="#clear"><code>clear()</code></a></li>
+<li><a href="#deletekey"><code>delete(key)</code></a></li>
+<li><a href="#entries"><code>entries()</code></a></li>
+<li><a href="#foreachcallbackfn-thisarg"><code>forEach(callbackFn, thisArg)</code></a></li>
+<li><a href="#getkey"><code>get(key)</code></a></li>
+<li><a href="#haskey"><code>has(key)</code></a></li>
+<li><a href="#keys"><code>keys()</code></a></li>
+<li><a href="#setkey-value"><code>set(key, value)</code></a></li>
+<li><a href="#values"><code>values()</code></a></li>
+<li><a href="#symboliterator"><code>[Symbol.iterator]()</code></a></li>
+</ul>
+<h3 id="clear"><code>clear()</code></h3>
+<p>Removes all entries from the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+map.clear();
+console.log(map.size); // 0
+</code></pre>
+<hr />
+<h3 id="deletekey"><code>delete(key)</code></h3>
+<p>Removes the entry with the specified key from the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+map.delete(&quot;name&quot;);
+console.log(map.has(&quot;name&quot;)); // false
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>key</code>: The key of the entry to remove.</li>
+</ul>
+<hr />
+<h3 id="entries"><code>entries()</code></h3>
+<p>Returns a new iterator object that contains an array of <code>[key, value]</code> pairs from the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+let entries = map.entries();
+for (let [key, value] of entries) {
+  console.log(key, value); // &quot;name&quot;, &quot;John&quot;
+}
+</code></pre>
+<hr />
+<h3 id="foreachcallbackfn-thisarg"><code>forEach(callbackFn, thisArg)</code></h3>
+<p>Executes a provided function once for each key-value pair in the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+map.forEach((value, key) =&gt; {
+  console.log(key, value); // &quot;name&quot;, &quot;John&quot;
+});
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>callbackFn</code>: Function to execute on each element in the map.</li>
+<li><code>thisArg</code> (Optional): Value to use as <code>this</code> inside <code>callbackFn</code>.</li>
+</ul>
+<hr />
+<h3 id="getkey"><code>get(key)</code></h3>
+<p>Returns the value associated with the given key.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+console.log(map.get(&quot;name&quot;)); // John
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>key</code>: The key of the element to retrieve.</li>
+</ul>
+<hr />
+<h3 id="haskey"><code>has(key)</code></h3>
+<p>Returns <code>true</code> if the map contains the specified key, otherwise <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+console.log(map.has(&quot;name&quot;)); // true
+console.log(map.has(&quot;age&quot;)); // false
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>key</code>: The key to check for existence in the map.</li>
+</ul>
+<hr />
+<h3 id="keys"><code>keys()</code></h3>
+<p>Returns a new iterator object that contains the keys in the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+let keys = map.keys();
+for (let key of keys) {
+  console.log(key); // &quot;name&quot;
+}
+</code></pre>
+<hr />
+<h3 id="setkey-value"><code>set(key, value)</code></h3>
+<p>Adds or updates an entry in the map with the given key and value.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+console.log(map.get(&quot;name&quot;)); // John
+map.set(&quot;name&quot;, &quot;Jane&quot;);
+console.log(map.get(&quot;name&quot;)); // Jane
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>key</code>: The key to set.</li>
+<li><code>value</code>: The value associated with the key.</li>
+</ul>
+<hr />
+<h3 id="values"><code>values()</code></h3>
+<p>Returns a new iterator object that contains the values of the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+let values = map.values();
+for (let value of values) {
+  console.log(value); // &quot;John&quot;
+}
+</code></pre>
+<hr />
+<h3 id="symboliterator"><code>[Symbol.iterator]()</code></h3>
+<p>Returns a new iterator object that iterates over <code>[key, value]</code> pairs from the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+for (let [key, value] of map) {
+  console.log(key, value); // &quot;name&quot;, &quot;John&quot;
+}
+</code></pre>
+<hr />
+<h2 id="instance-properties">Instance Properties</h2>
+<h3 id="size"><code>size</code></h3>
+<p>Returns the number of key-value pairs in the map.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let map = new Map();
+map.set(&quot;name&quot;, &quot;John&quot;);
+console.log(map.size); // 1
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Fundamental_Objects/String/" class="btn btn-neutral float-left" title="String"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Set/" class="btn btn-neutral float-right" title="Set">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>The Collector In JavaScript by Ziad Yahya is licensed under CC BY 4.0</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/zyahya/the-collector-in-js/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../Fundamental_Objects/String/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Set/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

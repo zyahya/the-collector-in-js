@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ziad Yahya" /><link rel="canonical" href="https://zyahya.github.io/the-collector-in-js/Global_Objects/Fundamental_Objects/Number/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Number - The Collector In JavaScript</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Number";
+        var mkdocs_page_input_path = "Global_Objects/Fundamental_Objects/Number.md";
+        var mkdocs_page_url = "/the-collector-in-js/Global_Objects/Fundamental_Objects/Number/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> The Collector In JavaScript
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">The Collector In JavaScript</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Global Objects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Function Properties</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/eval/">Eval</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/isFinite/">isFinite</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/isNaN/">isNaN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/parseInt/">parseInt</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Fundamental Objects</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Array/">Array</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Boolean/">Boolean</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Date/">Date</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Error/">Error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../JSON/">JSON</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Math/">Math</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Number</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#numbervalue-constructor">Number(value) Constructor</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-methods">Static Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#numberisfinitevalue">Number.isFinite(value)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numberisintegervalue">Number.isInteger(value)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numberisnanvalue">Number.isNaN(value)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numberissafeintegervalue">Number.isSafeInteger(value)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numberparsefloatstring">Number.parseFloat(string)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numberparseintstring-radix">Number.parseInt(string, radix)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-properties">Static Properties</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#numberepsilon">Number.EPSILON</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numbermax_safe_integer">Number.MAX_SAFE_INTEGER</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numbermax_value">Number.MAX_VALUE</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numbermin_safe_integer">Number.MIN_SAFE_INTEGER</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numbermin_value">Number.MIN_VALUE</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numbernan">Number.NaN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numbernegative_infinity">Number.NEGATIVE_INFINITY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#numberpositive_infinity">Number.POSITIVE_INFINITY</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instance-methods">Instance Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#toexponentialfractiondigits">toExponential(fractionDigits)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tofixeddigits">toFixed(digits)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tolocalestringlocales-options">toLocaleString(locales, options)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toprecisionprecision">toPrecision(precision)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tostringradix">toString(radix)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#valueof">valueOf()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Object/">Object</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RegExp/">RegExp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../String/">String</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Keyed Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/Map/">Map</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/Set/">Set</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/WeakMap/">WeakMap</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/WeakSet/">WeakSet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Value Properties</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/Infinity/">Infinity</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/NaN/">NaN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/globalThis/">globalThis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/undefined/">Undefined</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">The Collector In JavaScript</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Global Objects</li>
+          <li class="breadcrumb-item">Fundamental Objects</li>
+      <li class="breadcrumb-item active">Number</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/zyahya/the-collector-in-js/edit/master/docs/Global_Objects/Fundamental_Objects/Number.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="number">Number</h1>
+<p>The <code>Number</code> object in JavaScript represents numeric values, both integers and floating-point numbers. It provides methods and properties for performing mathematical operations, converting numbers, and handling special numeric values like <code>NaN</code> and <code>Infinity</code>.</p>
+<h2 id="constructor">Constructor</h2>
+<h3 id="numbervalue-constructor"><code>Number(value)</code> Constructor</h3>
+<p>Creates a <code>Number</code> object or converts a given value to a primitive number.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number(&quot;42&quot;)); // 42
+console.log(Number(&quot;3.14&quot;)); // 3.14
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+console.log(Number(null)); // 0
+console.log(Number(undefined)); // NaN
+console.log(Number(&quot;hello&quot;)); // NaN
+</code></pre>
+<p>If used with <code>new</code>, it creates a <code>Number</code> object instead of a primitive number:</p>
+<pre><code class="language-js">let numObj = new Number(42);
+console.log(numObj); // [Number: 42]
+console.log(typeof numObj); // &quot;object&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>value</code>: The value to convert to a number.</li>
+</ul>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Avoid using <code>new Number()</code> as it creates an object instead of a primitive, which can lead to unexpected behavior.</li>
+<li>Use <code>Number(value)</code> for type conversion.</li>
+</ul>
+<hr />
+<h2 id="static-methods">Static Methods</h2>
+<ul>
+<li><a href="#numberisfinitevalue"><code>Number.isFinite(value)</code></a></li>
+<li><a href="#numberisintegervalue"><code>Number.isInteger(value)</code></a></li>
+<li><a href="#numberisnanvalue"><code>Number.isNaN(value)</code></a></li>
+<li><a href="#numberissafeintegervalue"><code>Number.isSafeInteger(value)</code></a></li>
+<li><a href="#numberparsefloatstring"><code>Number.parseFloat(string)</code></a></li>
+<li><a href="#numberparseintstring-radix"><code>Number.parseInt(string, radix)</code></a></li>
+</ul>
+<h4 id="numberisfinitevalue"><code>Number.isFinite(value)</code></h4>
+<p>Returns <code>true</code> if <code>value</code> is a finite number, otherwise <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.isFinite(42)); // true
+console.log(Number.isFinite(Infinity)); // false
+console.log(Number.isFinite(&quot;42&quot;)); // false
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>value</code>: The value to check.</li>
+</ul>
+<hr />
+<h4 id="numberisintegervalue"><code>Number.isInteger(value)</code></h4>
+<p>Returns <code>true</code> if <code>value</code> is an integer, otherwise <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.isInteger(10)); // true
+console.log(Number.isInteger(10.5)); // false
+console.log(Number.isInteger(&quot;10&quot;)); // false
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>value</code>: The value to check.</li>
+</ul>
+<hr />
+<h4 id="numberisnanvalue"><code>Number.isNaN(value)</code></h4>
+<p>Returns <code>true</code> if <code>value</code> is <code>NaN</code> and is of type <code>Number</code>, otherwise <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.isNaN(NaN)); // true
+console.log(Number.isNaN(&quot;NaN&quot;)); // false
+console.log(Number.isNaN(5 / &quot;hello&quot;)); // true
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>value</code>: The value to check.</li>
+</ul>
+<hr />
+<h4 id="numberissafeintegervalue"><code>Number.isSafeInteger(value)</code></h4>
+<p>Returns <code>true</code> if <code>value</code> is a safe integer (within <code>Number.MIN_SAFE_INTEGER</code> to <code>Number.MAX_SAFE_INTEGER</code>), otherwise <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.isSafeInteger(9007199254740991)); // true
+console.log(Number.isSafeInteger(9007199254740992)); // false
+console.log(Number.isSafeInteger(3.14)); // false
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>value</code>: The value to check.</li>
+</ul>
+<hr />
+<h4 id="numberparsefloatstring"><code>Number.parseFloat(string)</code></h4>
+<p>Parses a string and returns a floating-point number.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.parseFloat(&quot;3.14&quot;)); // 3.14
+console.log(Number.parseFloat(&quot;10px&quot;)); // 10
+console.log(Number.parseFloat(&quot;px10&quot;)); // NaN
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>string</code>: The string to parse.</li>
+</ul>
+<hr />
+<h4 id="numberparseintstring-radix"><code>Number.parseInt(string, radix)</code></h4>
+<p>Parses a string and returns an integer, using the given radix.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.parseInt(&quot;42&quot;)); // 42
+console.log(Number.parseInt(&quot;101&quot;, 2)); // 5
+console.log(Number.parseInt(&quot;FF&quot;, 16)); // 255
+console.log(Number.parseInt(&quot;10px&quot;)); // 10
+console.log(Number.parseInt(&quot;px10&quot;)); // NaN
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>string</code>: The string to parse.</li>
+<li><code>radix</code> (Optional): The base for conversion (between <code>2</code> and <code>36</code>). Defaults to <code>10</code>.</li>
+</ul>
+<hr />
+<h2 id="static-properties">Static Properties</h2>
+<ul>
+<li><a href="#numberepsilon"><code>Number.EPSILON</code></a></li>
+<li><a href="#numbermax_safe_integer"><code>Number.MAX_SAFE_INTEGER</code></a></li>
+<li><a href="#numbermax_value"><code>Number.MAX_VALUE</code></a></li>
+<li><a href="#numbermin_safe_integer"><code>Number.MIN_SAFE_INTEGER</code></a></li>
+<li><a href="#numbermin_value"><code>Number.MIN_VALUE</code></a></li>
+<li><a href="#numbernan"><code>Number.NaN</code></a></li>
+<li><a href="#numberpositive_infinity"><code>Number.POSITIVE_INFINITY</code></a></li>
+<li><a href="#numbernegative_infinity"><code>Number.NEGATIVE_INFINITY</code></a></li>
+</ul>
+<h4 id="numberepsilon"><code>Number.EPSILON</code></h4>
+<p>The smallest difference between two representable numbers.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.EPSILON); // 2.220446049250313e-16
+</code></pre>
+<hr />
+<h4 id="numbermax_safe_integer"><code>Number.MAX_SAFE_INTEGER</code></h4>
+<p>The largest safe integer in JavaScript (<code>2^53 - 1</code>).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+</code></pre>
+<hr />
+<h4 id="numbermax_value"><code>Number.MAX_VALUE</code></h4>
+<p>The largest positive number in JavaScript.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+</code></pre>
+<hr />
+<h4 id="numbermin_safe_integer"><code>Number.MIN_SAFE_INTEGER</code></h4>
+<p>The smallest safe integer in JavaScript (<code>-(2^53 - 1)</code>).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+</code></pre>
+<hr />
+<h4 id="numbermin_value"><code>Number.MIN_VALUE</code></h4>
+<p>The smallest positive number in JavaScript, close to zero but not zero.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.MIN_VALUE); // 5e-324
+</code></pre>
+<hr />
+<h4 id="numbernan"><code>Number.NaN</code></h4>
+<p>Represents "Not-a-Number" (<code>NaN</code>).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.NaN); // NaN
+console.log(Number.NaN === NaN); // false (NaN is never equal to itself)
+</code></pre>
+<hr />
+<h4 id="numbernegative_infinity"><code>Number.NEGATIVE_INFINITY</code></h4>
+<p>Represents negative infinity.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.NEGATIVE_INFINITY); // -Infinity
+console.log(-1 / 0); // -Infinity
+</code></pre>
+<hr />
+<h4 id="numberpositive_infinity"><code>Number.POSITIVE_INFINITY</code></h4>
+<p>Represents positive infinity.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Number.POSITIVE_INFINITY); // Infinity
+console.log(1 / 0); // Infinity
+</code></pre>
+<hr />
+<h2 id="instance-methods">Instance Methods</h2>
+<ul>
+<li><a href="#toexponentialfractiondigits"><code>toExponential(fractionDigits)</code></a></li>
+<li><a href="#tofixeddigits"><code>toFixed(digits)</code></a></li>
+<li><a href="#tolocalestringlocales-options"><code>toLocaleString(locales, options)</code></a></li>
+<li><a href="#toprecisionprecision"><code>toPrecision(precision)</code></a></li>
+<li><a href="#tostringradix"><code>toString(radix)</code></a></li>
+<li><a href="#valueof"><code>valueOf()</code></a></li>
+</ul>
+<h3 id="toexponentialfractiondigits"><code>toExponential(fractionDigits)</code></h3>
+<p>Returns a string representing the number in exponential notation.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let num = 12345.6789;
+
+console.log(num.toExponential()); // &quot;1.23456789e+4&quot;
+console.log(num.toExponential(2)); // &quot;1.23e+4&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>fractionDigits</code> (Optional): The number of decimal places. Defaults to showing all significant digits.</li>
+</ul>
+<hr />
+<h3 id="tofixeddigits"><code>toFixed(digits)</code></h3>
+<p>Returns a string representing the number with a fixed number of decimal places.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let num = 123.456;
+
+console.log(num.toFixed()); // &quot;123&quot;
+console.log(num.toFixed(2)); // &quot;123.46&quot;
+console.log(num.toFixed(5)); // &quot;123.45600&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>digits</code> (Optional): The number of decimal places. Defaults to <code>0</code>.</li>
+</ul>
+<hr />
+<h3 id="tolocalestringlocales-options"><code>toLocaleString(locales, options)</code></h3>
+<p>Returns a string representing the number formatted according to a specific locale.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let num = 1234567.89;
+
+console.log(num.toLocaleString(&quot;en-US&quot;)); // &quot;1,234,567.89&quot;
+console.log(num.toLocaleString(&quot;de-DE&quot;)); // &quot;1.234.567,89&quot;
+console.log(num.toLocaleString(&quot;ar-EG&quot;)); // &quot;١٬٢٣٤٬٥٦٧٫٨٩&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>locales</code> (Optional): A BCP 47 language tag (e.g., <code>"en-US"</code>, <code>"de-DE"</code>). Defaults to the environment's locale.</li>
+<li><code>options</code> (Optional): Formatting options like <code>{ style: "currency", currency: "USD" }</code>.</li>
+</ul>
+<hr />
+<h3 id="toprecisionprecision"><code>toPrecision(precision)</code></h3>
+<p>Returns a string representing the number with a specified number of significant digits.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let num = 123.456;
+
+console.log(num.toPrecision(4)); // &quot;123.5&quot;
+console.log(num.toPrecision(2)); // &quot;1.2e+2&quot;
+console.log(num.toPrecision(6)); // &quot;123.456&quot;
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>precision</code>: The number of significant digits.</li>
+</ul>
+<hr />
+<h3 id="tostringradix"><code>toString(radix)</code></h3>
+<p>Returns a string representation of the number in the given base.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let num = 255;
+
+console.log(num.toString()); // &quot;255&quot;
+console.log(num.toString(2)); // &quot;11111111&quot; (binary)
+console.log(num.toString(16)); // &quot;ff&quot; (hexadecimal)
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>radix</code> (Optional): The base for conversion (between <code>2</code> and <code>36</code>). Defaults to <code>10</code>.</li>
+</ul>
+<hr />
+<h3 id="valueof"><code>valueOf()</code></h3>
+<p>Returns the primitive numeric value of a <code>Number</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let num = new Number(42);
+
+console.log(num.valueOf()); // 42
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Math/" class="btn btn-neutral float-left" title="Math"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Object/" class="btn btn-neutral float-right" title="Object">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>The Collector In JavaScript by Ziad Yahya is licensed under CC BY 4.0</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/zyahya/the-collector-in-js/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Math/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Object/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

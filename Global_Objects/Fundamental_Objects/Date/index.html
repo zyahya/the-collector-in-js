@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ziad Yahya" /><link rel="canonical" href="https://zyahya.github.io/the-collector-in-js/Global_Objects/Fundamental_Objects/Date/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Date - The Collector In JavaScript</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Date";
+        var mkdocs_page_input_path = "Global_Objects/Fundamental_Objects/Date.md";
+        var mkdocs_page_url = "/the-collector-in-js/Global_Objects/Fundamental_Objects/Date/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> The Collector In JavaScript
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">The Collector In JavaScript</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Global Objects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Function Properties</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/eval/">Eval</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/isFinite/">isFinite</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/isNaN/">isNaN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Function_Properties/parseInt/">parseInt</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Fundamental Objects</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Array/">Array</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Boolean/">Boolean</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Date</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#date-constructor">Date() Constructor</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-methods">Static Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#datenow">Date.now()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dateparsedatestring">Date.parse(dateString)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dateutcyear-month-day-hours-minutes-seconds-ms">Date.UTC(year, month, day, hours, minutes, seconds, ms)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instance-methods">Instance Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#date-and-time-retrieval-local-time">Date and Time Retrieval (Local Time)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#date-and-time-retrieval-utc">Date and Time Retrieval (UTC)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#date-and-time-modification-local-time">Date and Time Modification (Local Time)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#date-and-time-modification-utc">Date and Time Modification (UTC)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#date-and-time-formatting">Date and Time Formatting</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#primitive-value-conversion">Primitive Value Conversion</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Error/">Error</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../JSON/">JSON</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Math/">Math</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Number/">Number</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Object/">Object</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RegExp/">RegExp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../String/">String</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Keyed Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/Map/">Map</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/Set/">Set</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/WeakMap/">WeakMap</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Keyed_Collections/WeakSet/">WeakSet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Value Properties</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/Infinity/">Infinity</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/NaN/">NaN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/globalThis/">globalThis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Value_Properties/undefined/">Undefined</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">The Collector In JavaScript</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Global Objects</li>
+          <li class="breadcrumb-item">Fundamental Objects</li>
+      <li class="breadcrumb-item active">Date</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/zyahya/the-collector-in-js/edit/master/docs/Global_Objects/Fundamental_Objects/Date.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="date">Date</h1>
+<p>The <code>Date</code> object in JavaScript represents a specific point in time. It provides methods for creating, formatting, and manipulating dates and times, including support for time zones and daylight saving time.</p>
+<h2 id="constructor">Constructor</h2>
+<h3 id="date-constructor"><code>Date()</code> Constructor</h3>
+<p>Creates a <code>Date</code> object representing a specific date and time or the current date and time if called without arguments.</p>
+<p><strong>Example (Current Date and Time):</strong></p>
+<pre><code class="language-js">let now = new Date();
+console.log(now); // Current date and time
+</code></pre>
+<p><strong>Example (Specific Date):</strong></p>
+<pre><code class="language-js">let specificDate = new Date(2025, 0, 30); // Year, Month (0-based), Day
+console.log(specificDate); // Thu Jan 30 2025 00:00:00 GMT+0000
+</code></pre>
+<p><strong>Example (Using a Timestamp):</strong></p>
+<pre><code class="language-js">let timestampDate = new Date(1706592000000);
+console.log(timestampDate); // Date based on milliseconds since Unix Epoch
+</code></pre>
+<p><strong>Example (Parsing a Date String):</strong></p>
+<pre><code class="language-js">let stringDate = new Date(&quot;2025-01-30T12:00:00Z&quot;);
+console.log(stringDate); // Thu Jan 30 2025 12:00:00 GMT
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li>No arguments: Returns the current date and time.</li>
+<li><code>year, month, day, hours, minutes, seconds, milliseconds</code>: Constructs a date with specific values.</li>
+<li><code>timestamp</code>: Constructs a date from a number of milliseconds since <code>1970-01-01T00:00:00Z</code>.</li>
+<li><code>dateString</code>: Parses a string and returns the corresponding date.</li>
+</ul>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Months are <strong>zero-based</strong> (<code>0</code> = January, <code>11</code> = December).</li>
+<li>If an invalid date is provided, <code>Invalid Date</code> is returned.</li>
+</ul>
+<h2 id="static-methods">Static Methods</h2>
+<ul>
+<li><a href="#datenow"><code>Date.now()</code></a></li>
+<li><a href="#dateparsedatestring"><code>Date.parse(dateString)</code></a></li>
+<li><a href="#dateutcyear-month-day-hours-minutes-seconds-ms"><code>Date.UTC(year, month, day, hours, minutes, seconds, ms)</code></a></li>
+</ul>
+<h3 id="datenow"><code>Date.now()</code></h3>
+<p>Returns the current timestamp as the number of milliseconds since January 1, 1970 (UTC).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Date.now()); // 1700000000000 (example output)
+</code></pre>
+<hr />
+<h3 id="dateparsedatestring"><code>Date.parse(dateString)</code></h3>
+<p>Parses a date string and returns the timestamp (milliseconds since January 1, 1970, UTC). Returns <code>NaN</code> if the string is invalid.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Date.parse(&quot;2024-01-30&quot;)); // 1706572800000
+console.log(Date.parse(&quot;Invalid Date&quot;)); // NaN
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>dateString</code>: A string representing a date. Must be in a recognized format.</li>
+</ul>
+<hr />
+<h3 id="dateutcyear-month-day-hours-minutes-seconds-ms"><code>Date.UTC(year, month, day, hours, minutes, seconds, ms)</code></h3>
+<p>Creates a timestamp (milliseconds since January 1, 1970, UTC) for a given date and time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">console.log(Date.UTC(2024, 0, 30)); // 1706572800000
+console.log(Date.UTC(2024, 0, 30, 12, 30)); // 1706617800000
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>year</code>: The full year.</li>
+<li><code>month</code>: The month (0-based, <code>0</code> for January, <code>11</code> for December).</li>
+<li><code>day</code> (Optional): The day of the month. Defaults to <code>1</code>.</li>
+<li><code>hours</code> (Optional): The hour. Defaults to <code>0</code>.</li>
+<li><code>minutes</code> (Optional): The minutes. Defaults to <code>0</code>.</li>
+<li><code>seconds</code> (Optional): The seconds. Defaults to <code>0</code>.</li>
+<li><code>ms</code> (Optional): The milliseconds. Defaults to <code>0</code>.</li>
+</ul>
+<h2 id="instance-methods">Instance Methods</h2>
+<h3 id="date-and-time-retrieval-local-time">Date and Time Retrieval (Local Time)</h3>
+<p>Retrieve specific components of the date and time in the local time zone.</p>
+<ul>
+<li><a href="#getdate"><code>getDate()</code></a></li>
+<li><a href="#getday"><code>getDay()</code></a></li>
+<li><a href="#getfullyear"><code>getFullYear()</code></a></li>
+<li><a href="#gethours"><code>getHours()</code></a></li>
+<li><a href="#getmilliseconds"><code>getMilliseconds()</code></a></li>
+<li><a href="#getminutes"><code>getMinutes()</code></a></li>
+<li><a href="#getmonth"><code>getMonth()</code></a></li>
+<li><a href="#getseconds"><code>getSeconds()</code></a></li>
+<li><a href="#gettime"><code>getTime()</code></a></li>
+<li><a href="#gettimezoneoffset"><code>getTimezoneOffset()</code></a></li>
+</ul>
+<h4 id="getdate"><code>getDate()</code></h4>
+<p>Gets the day of the month (1–31) of the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+console.log(date.getDate()); // 1
+</code></pre>
+<hr />
+<h4 id="getday"><code>getDay()</code></h4>
+<p>Gets the day of the week (0–6) of the <code>Date</code> object in the local time zone. 0 represents Sunday, 1 represents Monday, and so on.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+console.log(date.getDay()); // 6 (Saturday)
+</code></pre>
+<hr />
+<h4 id="getfullyear"><code>getFullYear()</code></h4>
+<p>Gets the four-digit year of the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+console.log(date.getFullYear()); // 2025
+</code></pre>
+<hr />
+<h4 id="gethours"><code>getHours()</code></h4>
+<p>Gets the hour (0–23) of the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00&quot;);
+console.log(date.getHours()); // 12
+</code></pre>
+<hr />
+<h4 id="getmilliseconds"><code>getMilliseconds()</code></h4>
+<p>Gets the milliseconds (0–999) of the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:30.123&quot;);
+console.log(date.getMilliseconds()); // 123
+</code></pre>
+<hr />
+<h4 id="getminutes"><code>getMinutes()</code></h4>
+<p>Gets the minutes (0–59) of the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00&quot;);
+console.log(date.getMinutes()); // 30
+</code></pre>
+<hr />
+<h4 id="getmonth"><code>getMonth()</code></h4>
+<p>Gets the month (0–11) of the <code>Date</code> object in the local time zone. 0 represents January, 1 represents February, and so on.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+console.log(date.getMonth()); // 1 (February)
+</code></pre>
+<hr />
+<h4 id="getseconds"><code>getSeconds()</code></h4>
+<p>Gets the seconds (0–59) of the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:45&quot;);
+console.log(date.getSeconds()); // 45
+</code></pre>
+<hr />
+<h4 id="gettime"><code>getTime()</code></h4>
+<p>Gets the number of milliseconds since the Unix epoch (<code>1970-01-01T00:00:00Z</code>) for the <code>Date</code> object in the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+console.log(date.getTime()); // 1738329600000
+</code></pre>
+<hr />
+<h4 id="gettimezoneoffset"><code>getTimezoneOffset()</code></h4>
+<p>Gets the time difference between UTC and the local time zone, in minutes, for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+console.log(date.getTimezoneOffset()); // The time difference in minutes (e.g., -120 for UTC+2)
+</code></pre>
+<hr />
+<h3 id="date-and-time-retrieval-utc">Date and Time Retrieval (UTC)</h3>
+<p>Retrieve specific components of the date and time in Coordinated Universal Time (UTC).</p>
+<ul>
+<li><a href="#getutcdate"><code>getUTCDate()</code></a></li>
+<li><a href="#getutcday"><code>getUTCDay()</code></a></li>
+<li><a href="#getutcfullyear"><code>getUTCFullYear()</code></a></li>
+<li><a href="#getutchours"><code>getUTCHours()</code></a></li>
+<li><a href="#getutcmilliseconds"><code>getUTCMilliseconds()</code></a></li>
+<li><a href="#getutcminutes"><code>getUTCMinutes()</code></a></li>
+<li><a href="#getutcmonth"><code>getUTCMonth()</code></a></li>
+<li><a href="#getutcseconds"><code>getUTCSeconds()</code></a></li>
+</ul>
+<h4 id="getutcdate"><code>getUTCDate()</code></h4>
+<p>Gets the day of the month (1–31) of the <code>Date</code> object in Coordinated Universal Time (UTC).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00Z&quot;);
+console.log(date.getUTCDate()); // 1
+</code></pre>
+<hr />
+<h4 id="getutcday"><code>getUTCDay()</code></h4>
+<p>Gets the day of the week (0–6) of the <code>Date</code> object in UTC. 0 represents Sunday, 1 represents Monday, and so on.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00Z&quot;);
+console.log(date.getUTCDay()); // 6 (Saturday)
+</code></pre>
+<hr />
+<h4 id="getutcfullyear"><code>getUTCFullYear()</code></h4>
+<p>Gets the four-digit year of the <code>Date</code> object in UTC.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00Z&quot;);
+console.log(date.getUTCFullYear()); // 2025
+</code></pre>
+<hr />
+<h4 id="getutchours"><code>getUTCHours()</code></h4>
+<p>Gets the hour (0–23) of the <code>Date</code> object in UTC.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00Z&quot;);
+console.log(date.getUTCHours()); // 12
+</code></pre>
+<hr />
+<h4 id="getutcmilliseconds"><code>getUTCMilliseconds()</code></h4>
+<p>Gets the milliseconds (0–999) of the <code>Date</code> object in UTC.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:30.123Z&quot;);
+console.log(date.getUTCMilliseconds()); // 123
+</code></pre>
+<hr />
+<h4 id="getutcminutes"><code>getUTCMinutes()</code></h4>
+<p>Gets the minutes (0–59) of the <code>Date</code> object in UTC.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00Z&quot;);
+console.log(date.getUTCMinutes()); // 30
+</code></pre>
+<hr />
+<h4 id="getutcmonth"><code>getUTCMonth()</code></h4>
+<p>Gets the month (0–11) of the <code>Date</code> object in UTC. 0 represents January, 1 represents February, and so on.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:00Z&quot;);
+console.log(date.getUTCMonth()); // 1 (February)
+</code></pre>
+<hr />
+<h4 id="getutcseconds"><code>getUTCSeconds()</code></h4>
+<p>Gets the seconds (0–59) of the <code>Date</code> object in UTC.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T12:30:45Z&quot;);
+console.log(date.getUTCSeconds()); // 45
+</code></pre>
+<hr />
+<h3 id="date-and-time-modification-local-time">Date and Time Modification (Local Time)</h3>
+<p>Set or modify specific components of the date and time in the local time zone.</p>
+<ul>
+<li><a href="#setdatedate"><code>setDate(date)</code></a></li>
+<li><a href="#setfullyearyear-month-day"><code>setFullYear(year, month, day)</code></a></li>
+<li><a href="#sethourshours-minutes-seconds-milliseconds"><code>setHours(hours, minutes, seconds, milliseconds)</code></a></li>
+<li><a href="#setmillisecondsmilliseconds"><code>setMilliseconds(milliseconds)</code></a></li>
+<li><a href="#setminutesminutes-seconds-milliseconds"><code>setMinutes(minutes, seconds, milliseconds)</code></a></li>
+<li><a href="#setmonthmonth-date"><code>setMonth(month, date)</code></a></li>
+<li><a href="#setsecondsseconds-milliseconds"><code>setSeconds(seconds, milliseconds)</code></a></li>
+<li><a href="#settimetime"><code>setTime(time)</code></a></li>
+</ul>
+<h4 id="setdatedate"><code>setDate(date)</code></h4>
+<p>Sets the day of the month (1–31) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+date.setDate(15);
+console.log(date); // 2025-02-15T00:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>date</code>: The day of the month (1–31) to set.</li>
+</ul>
+<hr />
+<h4 id="setfullyearyear-month-day"><code>setFullYear(year, month, day)</code></h4>
+<p>Sets the full year (four digits) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+date.setFullYear(2027);
+console.log(date); // 2027-02-01T00:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>year</code>: The full year (four digits) to set.</li>
+<li><code>month</code> (Optional): The month (0–11) to set. Defaults to the current month if not provided.</li>
+<li><code>day</code> (Optional): The day of the month (1–31) to set. Defaults to the current day if not provided.</li>
+</ul>
+<hr />
+<h4 id="sethourshours-minutes-seconds-milliseconds"><code>setHours(hours, minutes, seconds, milliseconds)</code></h4>
+<p>Sets the hour (0–23) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setHours(15);
+console.log(date); // 2025-02-01T15:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>hours</code>: The hour (0–23) to set.</li>
+<li><code>minutes</code> (Optional): The minutes (0–59) to set. Defaults to the current minutes if not provided.</li>
+<li><code>seconds</code> (Optional): The seconds (0–59) to set. Defaults to the current seconds if not provided.</li>
+<li><code>milliseconds</code> (Optional): The milliseconds (0–999) to set. Defaults to the current milliseconds if not provided.</li>
+</ul>
+<hr />
+<h4 id="setmillisecondsmilliseconds"><code>setMilliseconds(milliseconds)</code></h4>
+<p>Sets the milliseconds (0–999) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00.500Z&quot;);
+date.setMilliseconds(300);
+console.log(date); // 2025-02-01T10:00:00.300Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>milliseconds</code>: The milliseconds (0–999) to set.</li>
+</ul>
+<hr />
+<h4 id="setminutesminutes-seconds-milliseconds"><code>setMinutes(minutes, seconds, milliseconds)</code></h4>
+<p>Sets the minutes (0–59) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setMinutes(45);
+console.log(date); // 2025-02-01T10:45:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>minutes</code>: The minutes (0–59) to set.</li>
+<li><code>seconds</code> (Optional): The seconds (0–59) to set. Defaults to the current seconds if not provided.</li>
+<li><code>milliseconds</code> (Optional): The milliseconds (0–999) to set. Defaults to the current milliseconds if not provided.</li>
+</ul>
+<hr />
+<h4 id="setmonthmonth-date"><code>setMonth(month, date)</code></h4>
+<p>Sets the month (0–11) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01&quot;);
+date.setMonth(5); // June (5)
+console.log(date); // 2025-06-01T00:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>month</code>: The month (0–11) to set.</li>
+<li><code>date</code> (Optional): The day of the month (1–31) to set. Defaults to the current day if not provided.</li>
+</ul>
+<hr />
+<h4 id="setsecondsseconds-milliseconds"><code>setSeconds(seconds, milliseconds)</code></h4>
+<p>Sets the seconds (0–59) for the <code>Date</code> object.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:30Z&quot;);
+date.setSeconds(15);
+console.log(date); // 2025-02-01T10:00:15.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>seconds</code>: The seconds (0–59) to set.</li>
+<li><code>milliseconds</code> (Optional): The milliseconds (0–999) to set. Defaults to the current milliseconds if not provided.</li>
+</ul>
+<hr />
+<h4 id="settimetime"><code>setTime(time)</code></h4>
+<p>Sets the <code>Date</code> object to the specified timestamp (in milliseconds since the Unix epoch).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setTime(1583020800000); // Timestamp for 2020-02-01T10:00:00Z
+console.log(date); // 2020-02-01T10:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>time</code>: The timestamp (in milliseconds) to set the <code>Date</code> object to.</li>
+</ul>
+<hr />
+<h3 id="date-and-time-modification-utc">Date and Time Modification (UTC)</h3>
+<p>Set or modify specific components of the date and time in Coordinated Universal Time (UTC).</p>
+<ul>
+<li><a href="#setutcdatedate"><code>setUTCDate(date)</code></a></li>
+<li><a href="#setutcfullyearyear-month-date"><code>setUTCFullYear(year, month, date)</code></a></li>
+<li><a href="#setutchourshours-minutes-seconds-milliseconds"><code>setUTCHours(hours, minutes, seconds, milliseconds)</code></a></li>
+<li><a href="#setutcmillisecondsmilliseconds"><code>setUTCMilliseconds(milliseconds)</code></a></li>
+<li><a href="#setutcminutesminutes-seconds-milliseconds"><code>setUTCMinutes(minutes, seconds, milliseconds)</code></a></li>
+<li><a href="#setutcmonthmonth-date"><code>setUTCMonth(month, date)</code></a></li>
+<li><a href="#setutcsecondsseconds-milliseconds"><code>setUTCSeconds(seconds, milliseconds)</code></a></li>
+</ul>
+<h4 id="setutcdatedate"><code>setUTCDate(date)</code></h4>
+<p>Sets the day of the month (1–31) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setUTCDate(15);
+console.log(date); // 2025-02-15T10:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>date</code>: The day of the month (1–31) to set in UTC.</li>
+</ul>
+<hr />
+<h4 id="setutcfullyearyear-month-date"><code>setUTCFullYear(year, month, date)</code></h4>
+<p>Sets the full year (four digits) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setUTCFullYear(2027);
+console.log(date); // 2027-02-01T10:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>year</code>: The full year (four digits) to set in UTC.</li>
+<li><code>month</code> (Optional): The month (0–11) to set. Defaults to the current month if not provided.</li>
+<li><code>date</code> (Optional): The day of the month (1–31) to set. Defaults to the current day if not provided.</li>
+</ul>
+<hr />
+<h4 id="setutchourshours-minutes-seconds-milliseconds"><code>setUTCHours(hours, minutes, seconds, milliseconds)</code></h4>
+<p>Sets the hour (0–23) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setUTCHours(15);
+console.log(date); // 2025-02-01T15:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>hours</code>: The hour (0–23) to set in UTC.</li>
+<li><code>minutes</code> (Optional): The minutes (0–59) to set in UTC. Defaults to the current minutes if not provided.</li>
+<li><code>seconds</code> (Optional): The seconds (0–59) to set in UTC. Defaults to the current seconds if not provided.</li>
+<li><code>milliseconds</code> (Optional): The milliseconds (0–999) to set in UTC. Defaults to the current milliseconds if not provided.</li>
+</ul>
+<hr />
+<h4 id="setutcmillisecondsmilliseconds"><code>setUTCMilliseconds(milliseconds)</code></h4>
+<p>Sets the milliseconds (0–999) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00.500Z&quot;);
+date.setUTCMilliseconds(300);
+console.log(date); // 2025-02-01T10:00:00.300Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>milliseconds</code>: The milliseconds (0–999) to set in UTC.</li>
+</ul>
+<hr />
+<h4 id="setutcminutesminutes-seconds-milliseconds"><code>setUTCMinutes(minutes, seconds, milliseconds)</code></h4>
+<p>Sets the minutes (0–59) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setUTCMinutes(45);
+console.log(date); // 2025-02-01T10:45:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>minutes</code>: The minutes (0–59) to set in UTC.</li>
+<li><code>seconds</code> (Optional): The seconds (0–59) to set in UTC. Defaults to the current seconds if not provided.</li>
+<li><code>milliseconds</code> (Optional): The milliseconds (0–999) to set in UTC. Defaults to the current milliseconds if not provided.</li>
+</ul>
+<hr />
+<h4 id="setutcmonthmonth-date"><code>setUTCMonth(month, date)</code></h4>
+<p>Sets the month (0–11) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+date.setUTCMonth(5); // June (5)
+console.log(date); // 2025-06-01T10:00:00.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>month</code>: The month (0–11) to set in UTC.</li>
+<li><code>date</code> (Optional): The day of the month (1–31) to set. Defaults to the current day if not provided.</li>
+</ul>
+<hr />
+<h4 id="setutcsecondsseconds-milliseconds"><code>setUTCSeconds(seconds, milliseconds)</code></h4>
+<p>Sets the seconds (0–59) for the <code>Date</code> object in UTC time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:30Z&quot;);
+date.setUTCSeconds(15);
+console.log(date); // 2025-02-01T10:00:15.000Z
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>seconds</code>: The seconds (0–59) to set in UTC.</li>
+<li><code>milliseconds</code> (Optional): The milliseconds (0–999) to set in UTC. Defaults to the current milliseconds if not provided.</li>
+</ul>
+<hr />
+<h3 id="date-and-time-formatting">Date and Time Formatting</h3>
+<p>Convert the date and time into human-readable strings or other formats.</p>
+<ul>
+<li><a href="#todatestring"><code>toDateString()</code></a></li>
+<li><a href="#toisostring"><code>toISOString()</code></a></li>
+<li><a href="#tojson"><code>toJSON()</code></a></li>
+<li><a href="#tolocaledatestringlocales-options"><code>toLocaleDateString(locales, options)</code></a></li>
+<li><a href="#tolocalestringlocales-options"><code>toLocaleString(locales, options)</code></a></li>
+<li><a href="#tolocaletimestringlocales-options"><code>toLocaleTimeString(locales, options)</code></a></li>
+<li><a href="#tostring"><code>toString()</code></a></li>
+<li><a href="#totimestring"><code>toTimeString()</code></a></li>
+<li><a href="#toutcstring"><code>toUTCString()</code></a></li>
+<li><a href="#totemporalinstant-experimental"><code>toTemporalInstant()</code></a> (Experimental)</li>
+</ul>
+<h4 id="todatestring"><code>toDateString()</code></h4>
+<p>Converts the <code>Date</code> object to a human-readable string that only includes the date part (not the time).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toDateString()); // Sat Feb 01 2025
+</code></pre>
+<hr />
+<h4 id="toisostring"><code>toISOString()</code></h4>
+<p>Converts the <code>Date</code> object to a string in ISO 8601 format, which includes both the date and time in UTC.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toISOString()); // 2025-02-01T10:00:00.000Z
+</code></pre>
+<hr />
+<h4 id="tojson"><code>toJSON()</code></h4>
+<p>Returns a string representing the <code>Date</code> object, suitable for JSON serialization, typically in ISO 8601 format.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toJSON()); // 2025-02-01T10:00:00.000Z
+</code></pre>
+<hr />
+<h4 id="tolocaledatestringlocales-options"><code>toLocaleDateString(locales, options)</code></h4>
+<p>Converts the <code>Date</code> object to a string representing only the date, formatted according to the local conventions of a specified locale.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toLocaleDateString(&quot;en-US&quot;)); // 2/1/2025
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>locales</code> (Optional): A string with a BCP 47 language tag, specifying the locale.</li>
+<li><code>options</code> (Optional): An object containing options for formatting the date (e.g., <code>weekday</code>, <code>year</code>, <code>month</code>, <code>day</code>).</li>
+</ul>
+<hr />
+<h4 id="tolocalestringlocales-options"><code>toLocaleString(locales, options)</code></h4>
+<p>Converts the <code>Date</code> object to a string representing both the date and time, formatted according to the local conventions of a specified locale.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toLocaleString(&quot;en-US&quot;)); // 2/1/2025, 10:00:00 AM
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>locales</code> (Optional): A string with a BCP 47 language tag, specifying the locale.</li>
+<li><code>options</code> (Optional): An object containing options for formatting the date and time (e.g., <code>weekday</code>, <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code>, <code>second</code>).</li>
+</ul>
+<hr />
+<h4 id="tolocaletimestringlocales-options"><code>toLocaleTimeString(locales, options)</code></h4>
+<p>Converts the <code>Date</code> object to a string representing only the time, formatted according to the local conventions of a specified locale.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toLocaleTimeString(&quot;en-US&quot;)); // 10:00:00 AM
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>locales</code> (Optional): A string with a BCP 47 language tag, specifying the locale.</li>
+<li><code>options</code> (Optional): An object containing options for formatting the time (e.g., <code>hour</code>, <code>minute</code>, <code>second</code>, <code>timeZoneName</code>).</li>
+</ul>
+<hr />
+<h4 id="tostring"><code>toString()</code></h4>
+<p>Converts the <code>Date</code> object to a string representation that includes both the date and time, formatted according to the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toString()); // Sat Feb 01 2025 10:00:00 GMT+0000 (Coordinated Universal Time)
+</code></pre>
+<hr />
+<h4 id="totimestring"><code>toTimeString()</code></h4>
+<p>Converts the <code>Date</code> object to a string that only includes the time part, formatted according to the local time zone.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toTimeString()); // 10:00:00 GMT+0000 (Coordinated Universal Time)
+</code></pre>
+<hr />
+<h4 id="toutcstring"><code>toUTCString()</code></h4>
+<p>Converts the <code>Date</code> object to a string that represents the date and time in UTC, in a format similar to <code>Date.toString()</code>, but in Coordinated Universal Time.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toUTCString()); // Sat, 01 Feb 2025 10:00:00 GMT
+</code></pre>
+<hr />
+<h4 id="totemporalinstant-experimental"><code>toTemporalInstant()</code> (Experimental)</h4>
+<p>Converts the <code>Date</code> object to a <code>Temporal.Instant</code> object, which is a part of the newer <code>Temporal</code> API for more precise date and time handling.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.toTemporalInstant()); // Temporal.Instant { timeZone: ... }
+</code></pre>
+<hr />
+<h3 id="primitive-value-conversion">Primitive Value Conversion</h3>
+<p>Convert the Date object to a primitive value (number or string) for comparison or arithmetic operations.</p>
+<ul>
+<li><a href="#valueof"><code>valueOf()</code></a></li>
+<li><a href="#symboltoprimitive"><code>[Symbol.toPrimitive]()</code></a></li>
+</ul>
+<h4 id="valueof"><code>valueOf()</code></h4>
+<p>Returns the primitive value of a <code>Date</code> object, which is the number of milliseconds since the Unix Epoch (January 1, 1970, 00:00:00 UTC).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date.valueOf()); // 1738380000000
+</code></pre>
+<hr />
+<h4 id="symboltoprimitivehint"><code>[Symbol.toPrimitive](hint)</code></h4>
+<p>This is a special method that allows you to customize how an object is converted to a primitive value when it's used in operations that expect a primitive value, such as arithmetic or string concatenation. For <code>Date</code> objects, this method returns the number of milliseconds since the Unix Epoch.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">let date = new Date(&quot;2025-02-01T10:00:00Z&quot;);
+console.log(date[Symbol.toPrimitive](&quot;number&quot;)); // 1738380000000
+console.log(date[Symbol.toPrimitive](&quot;string&quot;)); // Sat Feb 01 2025 10:00:00 GMT+0000 (Coordinated Universal Time)
+</code></pre>
+<p><strong>Arguments:</strong></p>
+<ul>
+<li><code>hint</code>: A string that indicates the desired type of conversion, either <code>"number"</code>, <code>"string"</code>, or <code>"default"</code>. When the <code>hint</code> is <code>"number"</code>, the <code>Date</code> object will be converted to its primitive numeric value (milliseconds). When <code>"string"</code> is used, it converts to a string representation.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Boolean/" class="btn btn-neutral float-left" title="Boolean"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Error/" class="btn btn-neutral float-right" title="Error">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>The Collector In JavaScript by Ziad Yahya is licensed under CC BY 4.0</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/zyahya/the-collector-in-js/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Boolean/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Error/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
