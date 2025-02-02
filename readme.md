@@ -19,7 +19,7 @@ Additionally, this book was crafted with the assistance of **artificial intellig
 
 By following this approach, this book ensures that you get the right information, in the right way, at the right time. Whether you're a beginner looking for clarity or an experienced developer seeking a quick reference, this book is designed to make your JavaScript journey smoother and more efficient.
 
-You can start reading from here: [docs/Overview.md](./docs/Overview.md)
+You can start reading from here: [./docs](./docs/)
 
 ---
 
