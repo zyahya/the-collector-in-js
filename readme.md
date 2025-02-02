@@ -1,18 +1,25 @@
 # The Collector In JavaScript
 
-Are you tired of sifting through lengthy documentation to find the JavaScript information you need? This book is designed to be your go-to reference—a concise, well-organized, and practical guide that helps you quickly access essential JavaScript concepts.
+JavaScript is a vast and dynamic language, filled with both essential and less frequently used features. While official documentation provides a comprehensive guide, it can sometimes be overwhelming—especially when you're searching for specific, practical knowledge. This book is not meant to replace the original references but rather to serve as a streamlined companion, offering a more structured and accessible approach.
 
-Unlike traditional references, this book doesn’t overwhelm you with excessive details. Instead, it focuses on the most important features, categorizes them into intuitive sections, and presents them in a clear and structured way.
+In this book, I’ve focused on three key principles:
 
-**What makes this book different?**\
-✅ Essential JavaScript Features Only – No unnecessary clutter, just the most useful parts of the language.\
-✅ Well-Organized Structure – Everything is grouped logically to help you find what you need faster.\
-✅ Concise and Straightforward – Each topic is explained in a minimalist format for quick learning.\
-✅ Based on MDN Web Docs – Reliable and accurate information, distilled into a simplified reference.
+1. **Refining the Essentials** – JavaScript contains a wide range of features, but as a developer, you only use a subset of them in most cases. This book distills the language down to its most valuable and frequently used components, helping you focus on what truly matters.
 
-Whether you're a beginner looking for clarity or an experienced developer who needs a quick refresher, this book is the perfect companion for mastering JavaScript efficiently.
+2. **Organized Categorization** – After selecting the most important aspects of JavaScript, I’ve grouped them into structured lists and sections based on their functionality. This makes it easier to navigate and quickly find what you need, much like the organization found in the String Object section.
 
-You can find the book at [zyahya.github.io/the-collector-in-js](https://zyahya.github.io/the-collector-in-js/).
+3. **Concise and to the Point** – Unlike traditional references that provide exhaustive details, this book follows a minimalist approach. Each topic is presented in a compact format that delivers exactly what you need, without unnecessary complexity. For example, functions in this book are explained in three simple sections:
+   - **Definition** – What the function does, including its purpose and the type of value it returns.
+   - **Practical Example** – A straightforward code snippet demonstrating its usage.
+   - **Parameters Breakdown** – A clear explanation of the inputs the function accepts.
+
+To ensure accuracy and reliability, this book is based on well-established resources, primarily the [**MDN Web Docs**](https://developer.mozilla.org/en-US/docs/Web/JavaScript). MDN serves as one of the most trusted references for JavaScript, and I have used it extensively as a foundation for gathering and refining the information presented here.
+
+Additionally, this book was crafted with the assistance of **artificial intelligence**, not as a replacement for human expertise, but as a powerful tool to enhance organization, clarity, and efficiency. AI helped in structuring the content, summarizing key concepts, and refining explanations to ensure a smooth and accessible learning experience. However, every decision—what to include, how to present it, and how to make it truly useful—was guided by careful thought and human insight.
+
+By following this approach, this book ensures that you get the right information, in the right way, at the right time. Whether you're a beginner looking for clarity or an experienced developer seeking a quick reference, this book is designed to make your JavaScript journey smoother and more efficient.
+
+You can start reading from here: [docs/Overview.md](./docs/Overview.md)
 
 ---
 

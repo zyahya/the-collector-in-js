@@ -1,7 +1,5 @@
 # directories
 src/
-venv/
-site/
 
 # files
 todo.md
