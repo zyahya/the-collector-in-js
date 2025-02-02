@@ -2,14 +2,64 @@
 
 The `Array` object in JavaScript is a collection of ordered elements that can store multiple values in a single variable. Arrays are zero-indexed, meaning the first element has an index of `0`.
 
+- [Array](#array)
+  - [Static Methods](#static-methods)
+    - [`Array.from(arrayLike, mapFn, thisArg)`](#arrayfromarraylike-mapfn-thisarg)
+    - [`Array.fromAsync(arrayLike, mapFn, thisArg)`](#arrayfromasyncarraylike-mapfn-thisarg)
+    - [`Array.isArray(value)`](#arrayisarrayvalue)
+    - [`Array.of(elementN)`](#arrayofelementn)
+  - [Instance Methods](#instance-methods)
+    - [Accessing Elements](#accessing-elements)
+      - [`at(index)`](#atindex)
+      - [`indexOf(searchElement, fromIndex)`](#indexofsearchelement-fromindex)
+      - [`lastIndexOf(searchElement, fromIndex)`](#lastindexofsearchelement-fromindex)
+      - [`includes(searchElement, fromIndex)`](#includessearchelement-fromindex)
+    - [Searching \& Filtering](#searching--filtering)
+      - [`filter(callbackFn, thisArg)`](#filtercallbackfn-thisarg)
+      - [`find(callbackFn, thisArg)`](#findcallbackfn-thisarg)
+      - [`findIndex(callbackFn, thisArg)`](#findindexcallbackfn-thisarg)
+      - [`findLast(callbackFn, thisArg)`](#findlastcallbackfn-thisarg)
+      - [`findLastIndex(callbackFn, thisArg)`](#findlastindexcallbackfn-thisarg)
+    - [Adding \& Removing Elements](#adding--removing-elements)
+      - [`push(elementN)`](#pushelementn)
+      - [`pop()`](#pop)
+      - [`shift()`](#shift)
+      - [`unshift(elementN)`](#unshiftelementn)
+      - [`splice(start, deleteCount, ...itemN)`](#splicestart-deletecount-itemn)
+      - [`toSpliced(start, deleteCount, ...itemN)`](#tosplicedstart-deletecount-itemn)
+    - [Conditions](#conditions)
+      - [`every(callbackFn, thisArg)`](#everycallbackfn-thisarg)
+      - [`some(callbackFn, thisArg)`](#somecallbackfn-thisarg)
+    - [Sorting \& Reversing](#sorting--reversing)
+      - [`sort(compareFn)`](#sortcomparefn)
+      - [`toSorted(compareFn)`](#tosortedcomparefn)
+      - [`reverse()`](#reverse)
+      - [`toReversed()`](#toreversed)
+    - [Reducing](#reducing)
+      - [`reduce(callbackFn, initialValue)`](#reducecallbackfn-initialvalue)
+      - [`reduceRight(callbackFn, initialValue)`](#reducerightcallbackfn-initialvalue)
+    - [Extracting \& Slicing](#extracting--slicing)
+      - [`slice(start, end)`](#slicestart-end)
+    - [Copying \& Modifying](#copying--modifying)
+      - [`copyWithin(target, start, end)`](#copywithintarget-start-end)
+      - [`fill(value, start, end)`](#fillvalue-start-end)
+    - [Creation \& Combination](#creation--combination)
+      - [`concat(arrN)`](#concatarrn)
+      - [`flat(depth)`](#flatdepth)
+      - [`flatMap(callbackFn, thisArg)`](#flatmapcallbackfn-thisarg)
+      - [`with(index, value)`](#withindex-value)
+    - [String Conversion](#string-conversion)
+      - [`toString()`](#tostring)
+      - [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
+      - [`join(separator)`](#joinseparator)
+    - [Iteration \& Transformation](#iteration--transformation)
+      - [`map(callbackFn, thisArg)`](#mapcallbackfn-thisarg)
+      - [`forEach(callbackFn, thisArg)`](#foreachcallbackfn-thisarg)
+      - [`entries()`](#entries)
+  - [Instance Properties](#instance-properties)
+    - [`length`](#length)
+
 ## Static Methods
-
-- [`Array.from(arrayLike, mapFn, thisArg)`](#arrayfromarraylike-mapfn-thisarg)
-- [`Array.fromAsync(arrayLike, mapFn, thisArg)`](#arrayfromasyncarraylike-mapfn-thisarg)
-- [`Array.isArray(value)`](#arrayisarrayvalue)
-- [`Array.of(elementN)`](#arrayofelementn)
-
----
 
 ### `Array.from(arrayLike, mapFn, thisArg)`
 
@@ -105,11 +155,6 @@ console.log(Array.of(1, 2, 3)); // [1, 2, 3]
 
 Used to retrieve elements from an array based on their position or check for their existence.
 
-- [`at(index)`](#atindex)
-- [`indexOf(searchElement, fromIndex)`](#indexofsearchelement-fromindex)
-- [`lastIndexOf(searchElement, fromIndex)`](#lastindexofsearchelement-fromindex)
-- [`includes(searchElement, fromIndex)`](#includessearchelement-fromindex)
-
 ---
 
 #### `at(index)`
@@ -197,12 +242,6 @@ console.log(arr.includes(20, 2)); // false
 ### Searching & Filtering
 
 Help find specific elements in an array, either by condition or direct match, and filter elements based on criteria.
-
-- [`filter(callbackFn, thisArg)`](#filtercallbackfn-thisarg)
-- [`find(callbackFn, thisArg)`](#findcallbackfn-thisarg)
-- [`findIndex(callbackFn, thisArg)`](#findindexcallbackfn-thisarg)
-- [`findLast(callbackFn, thisArg)`](#findlastcallbackfn-thisarg)
-- [`findLastIndex(callbackFn, thisArg)`](#findlastindexcallbackfn-thisarg)
 
 ---
 
@@ -325,13 +364,6 @@ console.log(result); // 3
 
 Enable modifying the array by adding or removing elements at the start, middle, or end.
 
-- [`push(elementN)`](#pushelementn)
-- [`pop()`](#pop)
-- [`shift()`](#shift)
-- [`unshift(elementN)`](#unshiftelementn)
-- [`splice(start, deleteCount, ...itemN)`](#splicestart-deletecount-itemn)
-- [`toSpliced(start, deleteCount, ...itemN)`](#tosplicedstart-deletecount-itemn)
-
 ---
 
 #### `push(elementN)`
@@ -449,9 +481,6 @@ console.log(arr); // [10, 20, 30, 40]
 
 Used to determine if all or some elements meet a specified condition.
 
-- [`every(callbackFn, thisArg)`](#everycallbackfn-thisarg)
-- [`some(callbackFn, thisArg)`](#somecallbackfn-thisarg)
-
 ---
 
 #### `every(callbackFn, thisArg)`
@@ -503,11 +532,6 @@ console.log(arr.some((num) => num > 40)); // false
 ### Sorting & Reversing
 
 Provide ways to order elements in ascending or descending order and reverse their sequence.
-
-- [`sort(compareFn)`](#sortcomparefn)
-- [`toSorted(compareFn)`](#tosortedcomparefn)
-- [`reverse()`](#reverse)
-- [`toReversed()`](#toreversed)
 
 ---
 
@@ -583,9 +607,6 @@ console.log(arr); // [10, 20, 30] (unchanged)
 
 Used for accumulating values from an array into a single result, like sums or averages.
 
-- [`reduce(callbackFn, initialValue)`](#reducecallbackfn-initialvalue)
-- [`reduceRight(callbackFn, initialValue)`](#reducerightcallbackfn-initialvalue)
-
 ---
 
 #### `reduce(callbackFn, initialValue)`
@@ -640,8 +661,6 @@ console.log(result); // "cba"
 
 Provide ways to extract portions of an array without modifying the original.
 
-- [`slice(start, end)`](#slicestart-end)
-
 ---
 
 #### `slice(start, end)`
@@ -669,9 +688,6 @@ console.log(arr); // [10, 20, 30, 40, 50] (unchanged)
 ### Copying & Modifying
 
 Allow duplicating and modifying elements within an array without adding or removing anything.
-
-- [`copyWithin(target, start, end)`](#copywithintarget-start-end)
-- [`fill(value, start, end)`](#fillvalue-start-end)
 
 ---
 
@@ -720,11 +736,6 @@ console.log(arr); // [1, 0, 0, 0, 5] (modified)
 ### Creation & Combination
 
 These functions help in creating new arrays by merging, flattening, or modifying existing ones.
-
-- [`concat(arrN)`](#concatarrn)
-- [`flat(depth)`](#flatdepth)
-- [`flatMap(callbackFn, thisArg)`](#flatmapcallbackfn-thisarg)
-- [`with(index, value)`](#withindex-value)
 
 ---
 
@@ -812,10 +823,6 @@ console.log(arr); // [10, 20, 30] (unchanged)
 
 Convert arrays into strings, either directly or with specific formatting.
 
-- [`toString()`](#tostring)
-- [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
-- [`join(separator)`](#joinseparator)
-
 ---
 
 #### `toString()`
@@ -874,10 +881,6 @@ console.log(arr.join()); // "apple,banana,cherry" (default separator is ",")
 ### Iteration & Transformation
 
 Return iterable objects that allow traversing an array’s elements with key-value pairs.
-
-- [`map(callbackFn, thisArg)`](#mapcallbackfn-thisarg)
-- [`forEach(callbackFn, thisArg)`](#foreachcallbackfn-thisarg)
-- [`entries()`](#entries)
 
 ---
 

@@ -2,9 +2,33 @@
 
 The `Number` object in JavaScript represents numeric values, both integers and floating-point numbers. It provides methods and properties for performing mathematical operations, converting numbers, and handling special numeric values like `NaN` and `Infinity`.
 
-## Constructor
+- [Number](#number)
+  - [`Number(value)` Constructor](#numbervalue-constructor)
+  - [Static Methods](#static-methods)
+    - [`Number.isFinite(value)`](#numberisfinitevalue)
+    - [`Number.isInteger(value)`](#numberisintegervalue)
+    - [`Number.isNaN(value)`](#numberisnanvalue)
+    - [`Number.isSafeInteger(value)`](#numberissafeintegervalue)
+    - [`Number.parseFloat(string)`](#numberparsefloatstring)
+    - [`Number.parseInt(string, radix)`](#numberparseintstring-radix)
+  - [Static Properties](#static-properties)
+    - [`Number.EPSILON`](#numberepsilon)
+    - [`Number.MAX_SAFE_INTEGER`](#numbermax_safe_integer)
+    - [`Number.MAX_VALUE`](#numbermax_value)
+    - [`Number.MIN_SAFE_INTEGER`](#numbermin_safe_integer)
+    - [`Number.MIN_VALUE`](#numbermin_value)
+    - [`Number.NaN`](#numbernan)
+    - [`Number.NEGATIVE_INFINITY`](#numbernegative_infinity)
+    - [`Number.POSITIVE_INFINITY`](#numberpositive_infinity)
+  - [Instance Methods](#instance-methods)
+    - [`toExponential(fractionDigits)`](#toexponentialfractiondigits)
+    - [`toFixed(digits)`](#tofixeddigits)
+    - [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
+    - [`toPrecision(precision)`](#toprecisionprecision)
+    - [`toString(radix)`](#tostringradix)
+    - [`valueOf()`](#valueof)
 
-### `Number(value)` Constructor
+## `Number(value)` Constructor
 
 Creates a `Number` object or converts a given value to a primitive number.
 
@@ -41,14 +65,7 @@ console.log(typeof numObj); // "object"
 
 ## Static Methods
 
-- [`Number.isFinite(value)`](#numberisfinitevalue)
-- [`Number.isInteger(value)`](#numberisintegervalue)
-- [`Number.isNaN(value)`](#numberisnanvalue)
-- [`Number.isSafeInteger(value)`](#numberissafeintegervalue)
-- [`Number.parseFloat(string)`](#numberparsefloatstring)
-- [`Number.parseInt(string, radix)`](#numberparseintstring-radix)
-
-#### `Number.isFinite(value)`
+### `Number.isFinite(value)`
 
 Returns `true` if `value` is a finite number, otherwise `false`.
 
@@ -66,7 +83,7 @@ console.log(Number.isFinite("42")); // false
 
 ---
 
-#### `Number.isInteger(value)`
+### `Number.isInteger(value)`
 
 Returns `true` if `value` is an integer, otherwise `false`.
 
@@ -84,7 +101,7 @@ console.log(Number.isInteger("10")); // false
 
 ---
 
-#### `Number.isNaN(value)`
+### `Number.isNaN(value)`
 
 Returns `true` if `value` is `NaN` and is of type `Number`, otherwise `false`.
 
@@ -102,7 +119,7 @@ console.log(Number.isNaN(5 / "hello")); // true
 
 ---
 
-#### `Number.isSafeInteger(value)`
+### `Number.isSafeInteger(value)`
 
 Returns `true` if `value` is a safe integer (within `Number.MIN_SAFE_INTEGER` to `Number.MAX_SAFE_INTEGER`), otherwise `false`.
 
@@ -120,7 +137,7 @@ console.log(Number.isSafeInteger(3.14)); // false
 
 ---
 
-#### `Number.parseFloat(string)`
+### `Number.parseFloat(string)`
 
 Parses a string and returns a floating-point number.
 
@@ -138,7 +155,7 @@ console.log(Number.parseFloat("px10")); // NaN
 
 ---
 
-#### `Number.parseInt(string, radix)`
+### `Number.parseInt(string, radix)`
 
 Parses a string and returns an integer, using the given radix.
 
@@ -161,16 +178,7 @@ console.log(Number.parseInt("px10")); // NaN
 
 ## Static Properties
 
-- [`Number.EPSILON`](#numberepsilon)
-- [`Number.MAX_SAFE_INTEGER`](#numbermax_safe_integer)
-- [`Number.MAX_VALUE`](#numbermax_value)
-- [`Number.MIN_SAFE_INTEGER`](#numbermin_safe_integer)
-- [`Number.MIN_VALUE`](#numbermin_value)
-- [`Number.NaN`](#numbernan)
-- [`Number.POSITIVE_INFINITY`](#numberpositive_infinity)
-- [`Number.NEGATIVE_INFINITY`](#numbernegative_infinity)
-
-#### `Number.EPSILON`
+### `Number.EPSILON`
 
 The smallest difference between two representable numbers.
 
@@ -182,7 +190,7 @@ console.log(Number.EPSILON); // 2.220446049250313e-16
 
 ---
 
-#### `Number.MAX_SAFE_INTEGER`
+### `Number.MAX_SAFE_INTEGER`
 
 The largest safe integer in JavaScript (`2^53 - 1`).
 
@@ -194,7 +202,7 @@ console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
 
 ---
 
-#### `Number.MAX_VALUE`
+### `Number.MAX_VALUE`
 
 The largest positive number in JavaScript.
 
@@ -206,7 +214,7 @@ console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
 
 ---
 
-#### `Number.MIN_SAFE_INTEGER`
+### `Number.MIN_SAFE_INTEGER`
 
 The smallest safe integer in JavaScript (`-(2^53 - 1)`).
 
@@ -218,7 +226,7 @@ console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
 
 ---
 
-#### `Number.MIN_VALUE`
+### `Number.MIN_VALUE`
 
 The smallest positive number in JavaScript, close to zero but not zero.
 
@@ -230,7 +238,7 @@ console.log(Number.MIN_VALUE); // 5e-324
 
 ---
 
-#### `Number.NaN`
+### `Number.NaN`
 
 Represents "Not-a-Number" (`NaN`).
 
@@ -243,7 +251,7 @@ console.log(Number.NaN === NaN); // false (NaN is never equal to itself)
 
 ---
 
-#### `Number.NEGATIVE_INFINITY`
+### `Number.NEGATIVE_INFINITY`
 
 Represents negative infinity.
 
@@ -256,7 +264,7 @@ console.log(-1 / 0); // -Infinity
 
 ---
 
-#### `Number.POSITIVE_INFINITY`
+### `Number.POSITIVE_INFINITY`
 
 Represents positive infinity.
 
@@ -270,13 +278,6 @@ console.log(1 / 0); // Infinity
 ---
 
 ## Instance Methods
-
-- [`toExponential(fractionDigits)`](#toexponentialfractiondigits)
-- [`toFixed(digits)`](#tofixeddigits)
-- [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
-- [`toPrecision(precision)`](#toprecisionprecision)
-- [`toString(radix)`](#tostringradix)
-- [`valueOf()`](#valueof)
 
 ### `toExponential(fractionDigits)`
 

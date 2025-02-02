@@ -2,9 +2,66 @@
 
 The `Date` object in JavaScript represents a specific point in time. It provides methods for creating, formatting, and manipulating dates and times, including support for time zones and daylight saving time.
 
-## Constructor
+- [Date](#date)
+  - [`Date()` Constructor](#date-constructor)
+  - [Static Methods](#static-methods)
+    - [`Date.now()`](#datenow)
+    - [`Date.parse(dateString)`](#dateparsedatestring)
+    - [`Date.UTC(year, month, day, hours, minutes, seconds, ms)`](#dateutcyear-month-day-hours-minutes-seconds-ms)
+  - [Instance Methods](#instance-methods)
+    - [Date and Time Retrieval (Local Time)](#date-and-time-retrieval-local-time)
+      - [`getDate()`](#getdate)
+      - [`getDay()`](#getday)
+      - [`getFullYear()`](#getfullyear)
+      - [`getHours()`](#gethours)
+      - [`getMilliseconds()`](#getmilliseconds)
+      - [`getMinutes()`](#getminutes)
+      - [`getMonth()`](#getmonth)
+      - [`getSeconds()`](#getseconds)
+      - [`getTime()`](#gettime)
+      - [`getTimezoneOffset()`](#gettimezoneoffset)
+    - [Date and Time Retrieval (UTC)](#date-and-time-retrieval-utc)
+      - [`getUTCDate()`](#getutcdate)
+      - [`getUTCDay()`](#getutcday)
+      - [`getUTCFullYear()`](#getutcfullyear)
+      - [`getUTCHours()`](#getutchours)
+      - [`getUTCMilliseconds()`](#getutcmilliseconds)
+      - [`getUTCMinutes()`](#getutcminutes)
+      - [`getUTCMonth()`](#getutcmonth)
+      - [`getUTCSeconds()`](#getutcseconds)
+    - [Date and Time Modification (Local Time)](#date-and-time-modification-local-time)
+      - [`setDate(date)`](#setdatedate)
+      - [`setFullYear(year, month, day)`](#setfullyearyear-month-day)
+      - [`setHours(hours, minutes, seconds, milliseconds)`](#sethourshours-minutes-seconds-milliseconds)
+      - [`setMilliseconds(milliseconds)`](#setmillisecondsmilliseconds)
+      - [`setMinutes(minutes, seconds, milliseconds)`](#setminutesminutes-seconds-milliseconds)
+      - [`setMonth(month, date)`](#setmonthmonth-date)
+      - [`setSeconds(seconds, milliseconds)`](#setsecondsseconds-milliseconds)
+      - [`setTime(time)`](#settimetime)
+    - [Date and Time Modification (UTC)](#date-and-time-modification-utc)
+      - [`setUTCDate(date)`](#setutcdatedate)
+      - [`setUTCFullYear(year, month, date)`](#setutcfullyearyear-month-date)
+      - [`setUTCHours(hours, minutes, seconds, milliseconds)`](#setutchourshours-minutes-seconds-milliseconds)
+      - [`setUTCMilliseconds(milliseconds)`](#setutcmillisecondsmilliseconds)
+      - [`setUTCMinutes(minutes, seconds, milliseconds)`](#setutcminutesminutes-seconds-milliseconds)
+      - [`setUTCMonth(month, date)`](#setutcmonthmonth-date)
+      - [`setUTCSeconds(seconds, milliseconds)`](#setutcsecondsseconds-milliseconds)
+    - [Date and Time Formatting](#date-and-time-formatting)
+      - [`toDateString()`](#todatestring)
+      - [`toISOString()`](#toisostring)
+      - [`toJSON()`](#tojson)
+      - [`toLocaleDateString(locales, options)`](#tolocaledatestringlocales-options)
+      - [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
+      - [`toLocaleTimeString(locales, options)`](#tolocaletimestringlocales-options)
+      - [`toString()`](#tostring)
+      - [`toTimeString()`](#totimestring)
+      - [`toUTCString()`](#toutcstring)
+      - [`toTemporalInstant()` (Experimental)](#totemporalinstant-experimental)
+    - [Primitive Value Conversion](#primitive-value-conversion)
+      - [`valueOf()`](#valueof)
+      - [`[Symbol.toPrimitive](hint)`](#symboltoprimitivehint)
 
-### `Date()` Constructor
+## `Date()` Constructor
 
 Creates a `Date` object representing a specific date and time or the current date and time if called without arguments.
 
@@ -49,10 +106,6 @@ console.log(stringDate); // Thu Jan 30 2025 12:00:00 GMT
 - If an invalid date is provided, `Invalid Date` is returned.
 
 ## Static Methods
-
-- [`Date.now()`](#datenow)
-- [`Date.parse(dateString)`](#dateparsedatestring)
-- [`Date.UTC(year, month, day, hours, minutes, seconds, ms)`](#dateutcyear-month-day-hours-minutes-seconds-ms)
 
 ### `Date.now()`
 
@@ -110,16 +163,7 @@ console.log(Date.UTC(2024, 0, 30, 12, 30)); // 1706617800000
 
 Retrieve specific components of the date and time in the local time zone.
 
-- [`getDate()`](#getdate)
-- [`getDay()`](#getday)
-- [`getFullYear()`](#getfullyear)
-- [`getHours()`](#gethours)
-- [`getMilliseconds()`](#getmilliseconds)
-- [`getMinutes()`](#getminutes)
-- [`getMonth()`](#getmonth)
-- [`getSeconds()`](#getseconds)
-- [`getTime()`](#gettime)
-- [`getTimezoneOffset()`](#gettimezoneoffset)
+---
 
 #### `getDate()`
 
@@ -255,14 +299,7 @@ console.log(date.getTimezoneOffset()); // The time difference in minutes (e.g., 
 
 Retrieve specific components of the date and time in Coordinated Universal Time (UTC).
 
-- [`getUTCDate()`](#getutcdate)
-- [`getUTCDay()`](#getutcday)
-- [`getUTCFullYear()`](#getutcfullyear)
-- [`getUTCHours()`](#getutchours)
-- [`getUTCMilliseconds()`](#getutcmilliseconds)
-- [`getUTCMinutes()`](#getutcminutes)
-- [`getUTCMonth()`](#getutcmonth)
-- [`getUTCSeconds()`](#getutcseconds)
+---
 
 #### `getUTCDate()`
 
@@ -372,14 +409,7 @@ console.log(date.getUTCSeconds()); // 45
 
 Set or modify specific components of the date and time in the local time zone.
 
-- [`setDate(date)`](#setdatedate)
-- [`setFullYear(year, month, day)`](#setfullyearyear-month-day)
-- [`setHours(hours, minutes, seconds, milliseconds)`](#sethourshours-minutes-seconds-milliseconds)
-- [`setMilliseconds(milliseconds)`](#setmillisecondsmilliseconds)
-- [`setMinutes(minutes, seconds, milliseconds)`](#setminutesminutes-seconds-milliseconds)
-- [`setMonth(month, date)`](#setmonthmonth-date)
-- [`setSeconds(seconds, milliseconds)`](#setsecondsseconds-milliseconds)
-- [`setTime(time)`](#settimetime)
+---
 
 #### `setDate(date)`
 
@@ -538,13 +568,7 @@ console.log(date); // 2020-02-01T10:00:00.000Z
 
 Set or modify specific components of the date and time in Coordinated Universal Time (UTC).
 
-- [`setUTCDate(date)`](#setutcdatedate)
-- [`setUTCFullYear(year, month, date)`](#setutcfullyearyear-month-date)
-- [`setUTCHours(hours, minutes, seconds, milliseconds)`](#setutchourshours-minutes-seconds-milliseconds)
-- [`setUTCMilliseconds(milliseconds)`](#setutcmillisecondsmilliseconds)
-- [`setUTCMinutes(minutes, seconds, milliseconds)`](#setutcminutesminutes-seconds-milliseconds)
-- [`setUTCMonth(month, date)`](#setutcmonthmonth-date)
-- [`setUTCSeconds(seconds, milliseconds)`](#setutcsecondsseconds-milliseconds)
+---
 
 #### `setUTCDate(date)`
 
@@ -685,16 +709,7 @@ console.log(date); // 2025-02-01T10:00:15.000Z
 
 Convert the date and time into human-readable strings or other formats.
 
-- [`toDateString()`](#todatestring)
-- [`toISOString()`](#toisostring)
-- [`toJSON()`](#tojson)
-- [`toLocaleDateString(locales, options)`](#tolocaledatestringlocales-options)
-- [`toLocaleString(locales, options)`](#tolocalestringlocales-options)
-- [`toLocaleTimeString(locales, options)`](#tolocaletimestringlocales-options)
-- [`toString()`](#tostring)
-- [`toTimeString()`](#totimestring)
-- [`toUTCString()`](#toutcstring)
-- [`toTemporalInstant()`](#totemporalinstant-experimental) (Experimental)
+---
 
 #### `toDateString()`
 
@@ -845,8 +860,7 @@ console.log(date.toTemporalInstant()); // Temporal.Instant { timeZone: ... }
 
 Convert the Date object to a primitive value (number or string) for comparison or arithmetic operations.
 
-- [`valueOf()`](#valueof)
-- [`[Symbol.toPrimitive]()`](#symboltoprimitive)
+---
 
 #### `valueOf()`
 

@@ -2,25 +2,65 @@
 
 The `Math` object in JavaScript provides a collection of properties and methods for performing mathematical operations and calculations. It includes functions for trigonometry, logarithms, rounding, and generating random numbers.
 
+- [Math](#math)
+  - [Static Properties](#static-properties)
+    - [Basic Arithmetic and Number Manipulation](#basic-arithmetic-and-number-manipulation)
+      - [`Math.abs(x)`](#mathabsx)
+      - [`Math.ceil(x)`](#mathceilx)
+      - [`Math.floor(x)`](#mathfloorx)
+      - [`Math.round(x)`](#mathroundx)
+      - [`Math.trunc(x)`](#mathtruncx)
+      - [`Math.sign(x)`](#mathsignx)
+      - [`Math.max(...args)`](#mathmaxargs)
+      - [`Math.min(...args)`](#mathminargs)
+      - [`Math.pow(x, y)`](#mathpowx-y)
+      - [`Math.sqrt(x)`](#mathsqrtx)
+      - [`Math.cbrt(x)`](#mathcbrtx)
+      - [`Math.hypot(...args)`](#mathhypotargs)
+      - [`Math.imul(x, y)`](#mathimulx-y)
+    - [Trigonometric Functions](#trigonometric-functions)
+      - [`Math.sin(x)`](#mathsinx)
+      - [`Math.cos(x)`](#mathcosx)
+      - [`Math.tan(x)`](#mathtanx)
+      - [`Math.asin(x)`](#mathasinx)
+      - [`Math.acos(x)`](#mathacosx)
+      - [`Math.atan(x)`](#mathatanx)
+      - [`Math.atan2(y, x)`](#mathatan2y-x)
+      - [`Math.sinh(x)`](#mathsinhx)
+      - [`Math.cosh(x)`](#mathcoshx)
+      - [`Math.tanh(x)`](#mathtanhx)
+      - [`Math.asinh(x)`](#mathasinhx)
+      - [`Math.acosh(x)`](#mathacoshx)
+      - [`Math.atanh(x)`](#mathatanhx)
+    - [Logarithmic and Exponential Functions](#logarithmic-and-exponential-functions)
+      - [`Math.exp(x)`](#mathexpx)
+      - [`Math.expm1(x)`](#mathexpm1x)
+      - [`Math.log(x)`](#mathlogx)
+      - [`Math.log10(x)`](#mathlog10x)
+      - [`Math.log1p(x)`](#mathlog1px)
+      - [`Math.log2(x)`](#mathlog2x)
+    - [Rounding and Precision](#rounding-and-precision)
+      - [`Math.fround(x)`](#mathfroundx)
+      - [`Math.f16round(x)`](#mathf16roundx)
+    - [Bitwise and Binary Operations](#bitwise-and-binary-operations)
+      - [`Math.clz32(x)`](#mathclz32x)
+    - [Random Number Generation](#random-number-generation)
+      - [`Math.random()`](#mathrandom)
+  - [Static Properties](#static-properties-1)
+    - [`Math.E`](#mathe)
+    - [`Math.LN10`](#mathln10)
+    - [`Math.LN2`](#mathln2)
+    - [`Math.LOG10E`](#mathlog10e)
+    - [`Math.LOG2E`](#mathlog2e)
+    - [`Math.PI`](#mathpi)
+    - [`Math.SQRT1_2`](#mathsqrt1_2)
+    - [`Math.SQRT2`](#mathsqrt2)
+
 ## Static Properties
 
 ### Basic Arithmetic and Number Manipulation
 
 Functions that perform basic arithmetic operations or manipulate numbers in simple ways.
-
-- [`Math.abs(x)`](#mathabsx)
-- [`Math.ceil(x)`](#mathceilx)
-- [`Math.floor(x)`](#mathfloorx)
-- [`Math.round(x)`](#mathroundx)
-- [`Math.trunc(x)`](#mathtruncx)
-- [`Math.sign(x)`](#mathsignx)
-- [`Math.max(...args)`](#mathmaxargs)
-- [`Math.min(...args)`](#mathminargs)
-- [`Math.pow(x, y)`](#mathpowx-y)
-- [`Math.sqrt(x)`](#mathsqrtx)
-- [`Math.cbrt(x)`](#mathcbrtx)
-- [`Math.hypot(...args)`](#mathhypotargs)
-- [`Math.imul(x, y)`](#mathimulx-y)
 
 ---
 
@@ -251,20 +291,6 @@ console.log(Math.imul(0xffffffff, 5)); // -5
 
 Functions that perform trigonometric calculations, including inverse and hyperbolic variants.
 
-- [`Math.sin(x)`](#mathsinx)
-- [`Math.cos(x)`](#mathcosx)
-- [`Math.tan(x)`](#mathtanx)
-- [`Math.asin(x)`](#mathasinx)
-- [`Math.acos(x)`](#mathacosx)
-- [`Math.atan(x)`](#mathatanx)
-- [`Math.atan2(y, x)`](#mathatan2y-x)
-- [`Math.sinh(x)`](#mathsinhx)
-- [`Math.cosh(x)`](#mathcoshx)
-- [`Math.tanh(x)`](#mathtanhx)
-- [`Math.asinh(x)`](#mathasinhx)
-- [`Math.acosh(x)`](#mathacoshx)
-- [`Math.atanh(x)`](#mathatanhx)
-
 ---
 
 #### `Math.sin(x)`
@@ -493,13 +519,6 @@ console.log(Math.atanh(2)); // NaN
 
 Functions that deal with logarithms, exponents, and related calculations.
 
-- [`Math.exp(x)`](#mathexpx)
-- [`Math.expm1(x)`](#mathexpm1x)
-- [`Math.log(x)`](#mathlogx)
-- [`Math.log10(x)`](#mathlog10x)
-- [`Math.log1p(x)`](#mathlog1px)
-- [`Math.log2(x)`](#mathlog2x)
-
 ---
 
 #### `Math.exp(x)`
@@ -608,9 +627,6 @@ console.log(Math.log2(1)); // 0
 
 Functions that handle rounding numbers or adjusting their precision.
 
-- [`Math.fround(x)`](#mathfroundx)
-- [`Math.f16round(x)`](#mathf16roundx)
-
 ---
 
 #### `Math.fround(x)`
@@ -651,8 +667,6 @@ console.log(Math.f16round(1.5)); // 1.5
 
 Functions that operate on the binary representation of numbers.
 
-- [`Math.clz32(x)`](#mathclz32x)
-
 ---
 
 #### `Math.clz32(x)`
@@ -676,8 +690,6 @@ console.log(Math.clz32(1000)); // 22
 
 Functions that generate random numbers.
 
-- [`Math.random()`](#mathrandom)
-
 ---
 
 #### `Math.random()`
@@ -697,15 +709,6 @@ This chapter provides a concise yet comprehensive overview of the `Math` object'
 ## Static Properties
 
 Static properties that represent commonly used mathematical constants.
-
-- [`Math.E`](#mathe)
-- [`Math.LN10`](#mathln10)
-- [`Math.LN2`](#mathln2)
-- [`Math.LOG10E`](#mathlog10e)
-- [`Math.LOG2E`](#mathlog2e)
-- [`Math.PI`](#mathpi)
-- [`Math.SQRT1_2`](#mathsqrt1_2)
-- [`Math.SQRT2`](#mathsqrt2)
 
 ---
 

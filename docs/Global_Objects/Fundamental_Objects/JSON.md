@@ -2,12 +2,14 @@
 
 The `JSON` object in JavaScript provides methods for parsing and serializing data in JavaScript Object Notation (JSON) format. It enables easy conversion between JSON strings and JavaScript objects.
 
-## Static Methods
+- [JSON](#json)
+  - [Static Methods](#static-methods)
+    - [`JSON.isRawJSON(jsonString)`](#jsonisrawjsonjsonstring)
+    - [`JSON.parse(text, reviver)`](#jsonparsetext-reviver)
+    - [`JSON.rawJSON(obj)`](#jsonrawjsonobj)
+    - [`JSON.stringify(value, replacer, space)`](#jsonstringifyvalue-replacer-space)
 
-- [`JSON.isRawJSON(jsonString)`](#jsonisrawjsonjsonstring)
-- [`JSON.parse(text, reviver)`](#jsonparsetext-reviver)
-- [`JSON.rawJSON(obj)`](#jsonrawjsonobj)
-- [`JSON.stringify(value, replacer, space)`](#jsonstringifyvalue-replacer-space)
+## Static Methods
 
 ### `JSON.isRawJSON(jsonString)`
 

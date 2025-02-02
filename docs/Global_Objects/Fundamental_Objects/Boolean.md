@@ -2,9 +2,13 @@
 
 The `Boolean` object in JavaScript represents a logical value, either `true` or `false`. It serves as a wrapper for primitive boolean values and provides methods for converting other data types to boolean values.
 
-## Constructor
+- [Boolean](#boolean)
+  - [`Boolean(value)` Constructor](#booleanvalue-constructor)
+  - [Instance Methods](#instance-methods)
+    - [`valueOf()`](#valueof)
+    - [`toString()`](#tostring)
 
-### `Boolean(value)`
+## `Boolean(value)` Constructor
 
 Converts a value to a boolean. Returns `true` for truthy values, and `false` for falsy values.
 
@@ -24,9 +28,6 @@ console.log(Boolean("hello")); // true
 ---
 
 ## Instance Methods
-
-- [`valueOf()`](#valueof)
-- [`toString()`](#tostring)
 
 ### `valueOf()`
 
